@@ -15,7 +15,7 @@ in
     extraSpecialArgs = { inherit inputs; };
 
     # home-manager user-packages
-    user.mulatta = {
+    users.mulatta = {
       # home-manager user config
       home.username = "mulatta";
       home.stateVersion = "25.05";
