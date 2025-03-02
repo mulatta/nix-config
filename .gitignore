@@ -1,0 +1,7 @@
+nix.conf
+result
+.DS_Store
+*.pam
+*.pub
+id_ed25519
+id_
