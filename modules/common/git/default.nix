@@ -23,6 +23,11 @@
         precomposeunicode = true;
       };
 
+      aliases = {
+        co = "checkout";
+        commit = "commit -s";
+      };
+
       color = {
         diff = "auto";
         status = "auto";
