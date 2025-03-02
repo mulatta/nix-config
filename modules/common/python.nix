@@ -6,6 +6,7 @@
     mypy
     black
     ruff-lsp
+    uv
   ];
 
   programs.ruff = {
