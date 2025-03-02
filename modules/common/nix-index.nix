@@ -1,9 +1,8 @@
-{ pkgs, ... }:
 {
-  programs.command-not-found = {
+  programs.nix-index = {
     enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
-  programs.bash.initExtra = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
 }
