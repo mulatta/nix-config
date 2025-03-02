@@ -35,11 +35,11 @@
     , nixpkgs
     , home-manager
     , sops-nix
-    , nur
-    , charmbracelet-nur
     , darwin
     , nix-homebrew
     , nix-index-database
+    , nur
+    , charmbracelet-nur
     , goreleaser-nur
     , ...
     }:
@@ -77,6 +77,9 @@
             nix-homebrew.darwinModules.nix-homebrew
             home-manager.darwinModules.home-manager
 
+            # overlays
+            { nixpkgs.overlays = overlays; }
+
             # specify modules
             ./modules/darwin
 
@@ -94,6 +97,9 @@
           modules = [
             # input modules
             home-manager.nixosModules.home-manager
+
+            # overlays
+            { nixpkgs.overlays = overlays; }
 
             # hardware specification
             ./hardwares/eq12.nix
