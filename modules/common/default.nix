@@ -18,5 +18,6 @@
     ./zellij.nix
     ./zoxide.nix
     ./zsh.nix
+    ./nix-index.nix
   ];
 }

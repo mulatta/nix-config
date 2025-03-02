@@ -7,4 +7,7 @@
     #  wget
   ];
   environment.shells = with pkgs; [ zsh bash ];
+
+  # enable zsh for default shell
+  programs.zsh.enable = true;
 }
