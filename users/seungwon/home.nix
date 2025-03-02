@@ -2,7 +2,7 @@
 let
   inherit (pkgs.stdenv) isDarwin isLinux;
   inherit (lib.lists) optionals;
-  sharedPkgs = [ ];
+  sharedPkgs = import ./shared/home-pkgs.nix { inherit pkgs; };
   darwinPkgs = import ./darwin/home-pkgs.nix { inherit pkgs; };
   nixosPkgs = import ./nixos/home-pkgs.nix { inherit pkgs; };
 in
