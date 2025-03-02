@@ -2,12 +2,22 @@
 
 {
   home.packages = with pkgs; [
-    black
+    ruff
     mypy
-    pylint
-    python312Packages.python-lsp-server
-    python312Packages.python-lsp-black
-    python312Packages.pyls-isort
-    python312Packages.pylsp-mypy
+    black
+    ruff-lsp
   ];
+
+  programs.ruff = {
+    enable = true;
+    package = pkgs.ruff;
+    settings = {
+      line-length = 100;
+      per-file-ignores = { "__init__.py" = [ "F401" ]; };
+      lint = {
+        select = [ "E4" "E7" "E9" "F" ];
+        ignore = [ ];
+      };
+    };
+  };
 }
