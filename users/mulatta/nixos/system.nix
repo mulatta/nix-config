@@ -10,6 +10,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # enable zsh for default shell
+  programs.zsh.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
