@@ -101,7 +101,7 @@
             ./modules/nixos
 
             # user-defined modules
-            ./users/mulatta/nixos/configuration.nix
+            ./users/mulatta/nixos
             ./users/mulatta/home.nix
           ];
         };
