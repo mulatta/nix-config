@@ -37,6 +37,6 @@
     };
     ignores = lib.splitString "\n" (builtins.readFile ./gitignore_global);
   };
-  home.file."~/.ssh/allowed_signers".text =
+  home.file.".ssh/allowed_signers".text =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEUynAzS0n6J++Iee01R+uD2/zvVOI2l4IWgLSfg7lq2 github 67085791+mulatta@users.noreply.github.com";
 }
