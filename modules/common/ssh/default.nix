@@ -13,7 +13,10 @@
       "my-server" = {
         hostname = "100.115.94.1";
         user = "mulatta";
-        identityFile = "~/.ssh/eq12_ed25519";
+        identityFile = [
+          "~/.ssh/eq12_ed25519"
+          "~/.ssh/id_ed25519"
+        ];
         identitiesOnly = true;
         forwardAgent = false;
       };
