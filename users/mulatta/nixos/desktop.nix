@@ -1,34 +1,32 @@
 { config, pkgs, ... }:
 {
   # List services that you want to enable:
-  services.xserver = {
+  services.xserver.enable = false;
+  programs.sway = {
     enable = true;
-    autorun = false;
-    displayManager.startx.enable = true;
+    wrapperFeatures.gtk = false;
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
+      wl-clipboard
+    ];
+  };
+  services.displayManager.ly = {
+    enable = true;
+    # defaultUser = "mulatta";
+  };
 
-    desktopManager = {
-      xterm.enable = false;
-      xfce.enable = false;
-      gnome.enable = false;
-      plasma6.enable = false;
-      lxqt.enable = false;
-
-      defaultSession = "none";
-    };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "sway";
+    TERM = "wezterm";
   };
 
   environment.systemPackages = with pkgs; [
-    xorg.xinit
-    xorg.xauth
+    wl-clipboard
+    grim
+    slurp
   ];
-
-  home.file.".xinitrc".text = ''
-    #!/bin/sh
-  
-    [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-  
-    xsetroot -solid "#1a1b26"
-  
-    exec wezterm
-  '';
 }
