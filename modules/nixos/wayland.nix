@@ -17,34 +17,15 @@
         "1" = [{ app_id = "org.wezfurlong.wezterm"; }];
       };
       startup = [
-        { command = "wezterm start -- zellij"; }
+        { command = "wezterm start -- zellij"; always = true; }
       ];
     };
     extraConfig = ''
-      default_border none
-      default_floating_border none
-      # font pango:monospace 0
-      titlebar_border_thickness 0
-      titlebar_padding 0
-
-      for_window [app_id="org.wezfurlong.wezterm"] fullscreen enable
-
-      # unbindsym Mod4+f
-      # unbindsym Mod+Shift+space
-      # unbindsym Mod4+space
-
-      # unbindsym Mod4+1
-      # unbindsym Mod4+2
-      # unbindsym Mod4+3
-      # unbindsym Mod4+4
-      # unbindsym Mod4+5
-
-      # unbindsym Mod4+Shift+q
-      # unbindsym Mod4+Left
-      # unbindsym Mod4+Right
-      # unbindsym Mod4+Up
-      # unbindsym Mod4+Down
-      
+      for_window [app_id="org.wezfurlong.wezterm"] {
+        border none  
+        fullscreen enable
+      } 
+   
       bindsym Mod4+Shift+e exec swaymsg exit
     '';
   };

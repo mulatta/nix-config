@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nur.url = "github:nix-community/NUR";
-    # mulatta-nur.url = "github:mulatta/NUR";
+    mulatta-nur.url = "github:mulatta/NUR";
     charmbracelet-nur.url = "github:charmbracelet/nur";
     goreleaser-nur.url = "github:goreleaser/nur";
 
@@ -39,6 +39,7 @@
     , nix-homebrew
     , nix-index-database
     , nur
+    , mulatta-nur
     , charmbracelet-nur
     , goreleaser-nur
     , ...
@@ -50,7 +51,7 @@
             nurpkgs = prev;
             pkgs = prev;
             repoOverrides = {
-              # mulatta = import mulatta-nur { pkgs = prev; };
+              mulatta = import mulatta-nur { pkgs = prev; };
               charmbracelet = import charmbracelet-nur { pkgs = prev; };
               goreleaser = import goreleaser-nur { pkgs = prev; };
             };
