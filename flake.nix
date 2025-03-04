@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nur.url = "github:nix-community/NUR";
-    mulatta-nur.url = "github:mulatta/NUR";
+    mulatta-nur.url = "git+ssh://git@github:mulatta/NUR";
     charmbracelet-nur.url = "github:charmbracelet/nur";
     goreleaser-nur.url = "github:goreleaser/nur";
 
