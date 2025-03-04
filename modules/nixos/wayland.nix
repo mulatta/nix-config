@@ -14,7 +14,7 @@
         titlebar = false;
       };
       assigns = {
-        "1" = [{ app_id = "org.wezfurlong.wezter"; }];
+        "1" = [{ app_id = "org.wezfurlong.wezterm"; }];
       };
       startup = [
         { command = "wezterm start -- zellij"; }
