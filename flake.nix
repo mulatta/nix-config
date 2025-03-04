@@ -106,7 +106,6 @@
 
             # specify modules
             ./modules/nixos
-            ./modules/nixos/wayland.nix
 
             # user-defined modules
             ./users/mulatta/nixos
