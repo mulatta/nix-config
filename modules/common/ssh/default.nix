@@ -1,7 +1,6 @@
 {
   programs.ssh = {
     enable = true;
-    startAgent = true;
     matchBlocks = {
       "*" = {
         extraOptions = {
