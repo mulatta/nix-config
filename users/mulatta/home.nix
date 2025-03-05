@@ -23,8 +23,8 @@ in
       # programs (manage configs & pkgs)
       imports = [
         ../../modules/common
-        ../../modules/nixos/wayland.nix
         ./nixos/wezterm.nix
+        ./nixos/wayland.nix
         ./nixos/ssh.nix
         ./nixos/desktop.nix
         inputs.nix-index-database.hmModules.nix-index
