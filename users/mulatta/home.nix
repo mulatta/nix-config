@@ -24,9 +24,8 @@ in
       imports = [
         ../../modules/common
         ./nixos/wezterm.nix
-        ./nixos/wayland.nix
+        # ./nixos/wayland.nix
         ./nixos/ssh.nix
-        ./nixos/desktop.nix
         inputs.nix-index-database.hmModules.nix-index
       ];
 

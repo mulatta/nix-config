@@ -107,11 +107,10 @@
 
             # specify modules
             ./modules/nixos
-            ./modules/nixos/wayland.nix
-            ./modules/nixos/sway.nix
 
             # user-defined modules
             ./users/mulatta/nixos
+            ./users/mulatta/nixos/desktop.nix
             ./users/mulatta/home.nix
           ];
         };

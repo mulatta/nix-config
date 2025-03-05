@@ -1,6 +1,18 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-  # List services that you want to enable:
-  services.xserver.enable = false;
-  security.polkit.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.startx = {
+      enable = true;
+      session = ''
+        exec ${pkgs.wezterm}/bin/wezterm
+      '';
+    };
+    windowManager.default = "none";
+  };
+
+  environment.systemPackages = with pkgs;[
+    xterm
+    noto-fonts
+  ];
 }

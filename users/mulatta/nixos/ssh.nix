@@ -20,8 +20,4 @@
       };
     };
   };
-  services.ssh-agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
 }
