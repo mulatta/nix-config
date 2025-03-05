@@ -1,38 +1,20 @@
+{ pkgs, ... }:
 {
-  wayland.windowManager.sway = {
+  services.displayManager.ly = {
     enable = true;
-    config = {
-      terminal = "wezterm";
-      menu = "";
-      bars = [ ];
-      window = {
-        border = 0;
-        titlebar = false;
-      };
-      floating = {
-        border = 0;
-        titlebar = false;
-      };
-      assigns = {
-        "1" = [{ app_id = "org.wezfurlong.wezterm"; }];
-      };
-      startup = [
-        { command = "wezterm start -- zellij"; always = true; }
-      ];
-    };
-    extraConfig = ''
-      for_window [app_id="org.wezfurlong.wezterm"] {
-        border none  
-        fullscreen enable
-      } 
-   
-      unbindsym --all
-      unbindcode --all
-      seat * hide_cursor always
-      bindsym Mod4+Shift+e exec swaymsg exit
-    '';
   };
-  boot.blacklistedKernelModules = [
-    "psmouse"
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_CURRENT_DESKTOP = "sway";
+    TERM = "wezterm";
+  };
+
+  environment.systemPackages = with pkgs; [
+    wl-clipboard
+    grim
+    slurp
   ];
 }

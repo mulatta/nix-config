@@ -1,6 +1,12 @@
 {
   programs.ssh = {
     enable = true;
+    addKeysToAgent = "yes";
+    extraConfig = ''
+      AddKeysToAget yes
+      IdentityAgent "SSH_AUTH_SOCK=%t/keyring/ssh"
+    '';
+
     matchBlocks = {
       "github.com" = {
         identityFile = "~/.ssh/github_ed25519";
@@ -14,5 +20,8 @@
       };
     };
   };
-  services.ssh-agen.enable = true;
+  services.ssh-agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 }

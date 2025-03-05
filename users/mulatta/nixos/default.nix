@@ -1,10 +1,10 @@
 {
   imports = [
     ./networking.nix
-    ./desktop.nix
+    # ./desktop.nix
+    ./wayland.nix
     ./system-profiles.nix
     ./user-profiles.nix
-    ./ssh.nix
     ./system.nix
   ];
 }

@@ -25,6 +25,8 @@ in
         ../../modules/common
         ../../modules/nixos/wayland.nix
         ./nixos/wezterm.nix
+        ./nixos/ssh.nix
+        ./nixos/desktop.nix
         inputs.nix-index-database.hmModules.nix-index
       ];
 
