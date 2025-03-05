@@ -26,7 +26,13 @@
         fullscreen enable
       } 
    
+      unbindsym --all
+      unbindcode --all
+      seat * hide_cursor always
       bindsym Mod4+Shift+e exec swaymsg exit
     '';
   };
+  boot.blacklistedKernelModules = [
+    "psmouse"
+  ];
 }
