@@ -18,4 +18,5 @@
       pylint
     ];
   };
+  programs.fish.enable = true;
 }

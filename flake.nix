@@ -82,8 +82,8 @@
               home-manager.users.seungwon = {
                 imports = [
                   ./modules/common
-                  ./modules/home.nix
                   ./modules/darwin
+                  ./modules/home.nix
                   inputs.nix-index-database.hmModules.nix-index
                 ];
 
@@ -108,8 +108,9 @@
                   {
                     imports = [
                       ./modules/common
-                      ./modules/home.nix
                       ./modules.nixos.nix
+                      ./modules/home.nix
+                      inputs.nix-index-database.hmModules.nix-index
                     ];
 
                   };
