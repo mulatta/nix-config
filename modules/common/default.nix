@@ -18,7 +18,7 @@
     ./ripgrep.nix
     ./zellij.nix
     ./zoxide.nix
-    ./zsh.nix
+    # ./zsh.nix
     ./ghostty
     ./yammllint.nix
     ./nix-index.nix

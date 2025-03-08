@@ -47,6 +47,8 @@
     # packages = with pkgs; [ ];
   };
 
+  programs.fish.enable = true;
+
   ### ===== SERVICES =====
   # Configure keymap in X11
   services.xserver.xkb = {
