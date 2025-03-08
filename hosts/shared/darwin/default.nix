@@ -11,6 +11,6 @@
     ./system.nix
     ./security.nix
     ./system-pkgs.nix
-    ./brew.nix
+    ./homebrew.nix
   ];
 }

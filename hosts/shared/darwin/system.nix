@@ -119,7 +119,7 @@
 
 
     # scripts that make aliases for applications in /Applications
-    system.activationScripts.applications.text =
+    activationScripts.applications.text =
       let
         sysEnv = pkgs.buildEnv {
           name = "system-applications";
