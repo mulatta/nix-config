@@ -31,9 +31,9 @@
       }
     ];
     shellAliases = {
-      # docker
-      d = "docker";
-      dp = "podman";
+      # # docker
+      # d = "docker";
+      # dp = "podman";
 
       # git
       g = "git";
@@ -60,56 +60,24 @@
       gwc = "git switch -c";
       gpr = "git ppr";
 
-      # go
-      gmt = "go mod tidy";
-      grm = "go run ./...";
-
-      # kubectl
-      kx = "kubectx";
-      kn = "kubens";
-      k = "kubectl";
-      sk = "kubectl -n kube-system";
-      kg = "kubectl get";
-      kgp = "kubectl get po";
-      kga = "kubectl get --all-namespaces";
-      kd = "kubectl describe";
-      kdp = "kubectl describe po";
-      krm = "kubectl delete";
-      ke = "kubectl edit";
-      kex = "kubectl exec -it";
-      kdebug = ''
-        kubectl run -i -t debug --rm --image=caarlos0/debug --restart=Never
-      '';
-      knrunning = "kubectl get pods --field-selector=status.phase!=Running";
-      kfails = ''
-        kubectl get po -owide --all-namespaces | grep "0/" | tee /dev/tty | wc -l
-      '';
-      kimg = ''
-        kubectl get deployment --output=jsonpath='{.spec.template.spec.containers[*].image}'
-      '';
-      kvs = "kubectl view-secret";
-      kgno = "kubectl get no --sort-by=.metadata.creationTimestamp";
-      kdrain = "kubectl drain --ignore-daemonsets --delete-local-data";
-
-      # neovim
-      e = "nvim";
-      v = "nvim";
-
-      # terraform
-      tf = "terraform";
+      # # go
+      # gmt = "go mod tidy";
+      # grm = "go run ./...";
 
       # tmux
-      ta = "tmux new -A -s default";
+      # ta = "tmux new -A -s default";
 
       freeze = "freeze -c full";
 
       # mods
       gcai = "git --no-pager diff | mods 'write a commit message for this patch. also write the long commit message. use semantic commits. break the lines at 80 chars' >.git/gcai; git commit -a -F .git/gcai -e";
     };
-  };
-
-  xdg.configFile."fish/functions" = {
-    source = config.lib.file.mkOutOfStoreSymlink ./functions;
+    functions = {
+      c = builtins.readFile ./functions/c.fish;
+      y = builtins.readFile ./functions/y.fish;
+      mkc = builtins.readFile ./functions/mkc.fish;
+      cdr = builtins.readFile ./functions/cdr.fish;
+    };
   };
 
   xdg.configFile."fish/themes/gruvbox.theme" = {
