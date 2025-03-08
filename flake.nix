@@ -85,73 +85,72 @@
                   ./modules/home.nix
                   inputs.nix-index-database.hmModules.nix-index
                 ];
-              };
 
+              };
             }
           ];
         };
-
-        nixosConfigurations = {
-          mulatta = nixpkgs.lib.nixosSystem
-            {
-              system = "x86_64-linux";
-              modules = [
-                { nixpkgs.overlays = overlays; }
-                ./hosts/mulatta
-                home-manager.nixosModules.home-manager
-                {
-                  home-manager.useGlobalPkgs = true;
-                  home-manager.useUserPackages = true;
-                  home-manager.backupFileExtension = "hm";
-                  home-manager.users.seungwon =
-                    {
-                      imports = [
-                        ./modules/common
-                        ./modules/home.nix
-                        ./modules.nixos.nix
-                      ];
-                    };
-                }
-              ];
-            };
-
-          devShells = forAllSystems (
-            system:
-            let
-              pkgs = nixpkgsFor.${system};
-            in
-            {
-              default = pkgs.mkShellNoCC {
-                buildInputs = with pkgs; [
-                  (writeScriptBin "dot-clean" ''
-                    nix-collect-garbage -d --delete-older-than 30d
-                  '')
-                  (writeScriptBin "dot-release" ''
-                    tag="$(date +%Y).$(expr $(date +%m) + 0).$(expr $(date +%d) + 0)"
-                    git tag -m "$tag" "$tag"
-                    git push --tags
-                    goreleaser release --clean
-                  '')
-                  (writeScriptBin "dot-sync" ''
-                    git pull --rebase origin main
-                    nix flake update
-                    dot-clean
-                    dot-apply
-                  '')
-                  (writeScriptBin "dot-apply" ''
-                    if test $(uname -s) == "Linux"; then
-                      sudo nixos-rebuild switch --flake .#
-                    fi
-                    if test $(uname -s) == "Darwin"; then
-                      nix build "./#darwinConfigurations.$(hostname | cut -f1 -d'.').system"
-                      ./result/sw/bin/darwin-rebuild switch --flake .
-                    fi
-                  '')
-                ];
-              };
-            }
-          );
-        };
       };
+      nixosConfigurations = {
+        mulatta = nixpkgs.lib.nixosSystem
+          {
+            system = "x86_64-linux";
+            modules = [
+              { nixpkgs.overlays = overlays; }
+              ./hosts/mulatta
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.backupFileExtension = "hm";
+                home-manager.users.seungwon =
+                  {
+                    imports = [
+                      ./modules/common
+                      ./modules/home.nix
+                      ./modules.nixos.nix
+                    ];
+
+                  };
+              }
+            ];
+          };
+      };
+      devShells = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgsFor.${system};
+        in
+        {
+          default = pkgs.mkShellNoCC {
+            buildInputs = with pkgs; [
+              (writeScriptBin "dot-clean" ''
+                nix-collect-garbage -d --delete-older-than 30d
+              '')
+              (writeScriptBin "dot-release" ''
+                tag="$(date +%Y).$(expr $(date +%m) + 0).$(expr $(date +%d) + 0)"
+                git tag -m "$tag" "$tag"
+                git push --tags
+                goreleaser release --clean
+              '')
+              (writeScriptBin "dot-sync" ''
+                git pull --rebase origin main
+                nix flake update
+                dot-clean
+                dot-apply
+              '')
+              (writeScriptBin "dot-apply" ''
+                if test $(uname -s) == "Linux"; then
+                  sudo nixos-rebuild switch --flake .#
+                fi
+                if test $(uname -s) == "Darwin"; then
+                  nix build "./#darwinConfigurations.$(hostname | cut -f1 -d'.').system"
+                  ./result/sw/bin/darwin-rebuild switch --flake .
+                fi
+              '')
+            ];
+          };
+        }
+      );
     };
 }
