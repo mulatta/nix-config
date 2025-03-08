@@ -17,15 +17,4 @@
       "/Applications/KakaoTalk.app"
     ];
   };
-
-  environment = {
-    systemPath = [ "/opt/homebrew/bin" ];
-    pathsToLink = [ "/Applications" ];
-  };
-
-  # sudo with touch/watch ID
-  security.pam.services.sudo_local = {
-    touchIdAuth = true;
-    watchIdAuth = true;
-  };
 }
