@@ -74,7 +74,7 @@
     };
     functions = {
       c = builtins.readFile ./functions/c.fish;
-      y = builtins.readFile ./functions/y.fish;
+      h = builtins.readFile ./functions/h.fish;
       mkc = builtins.readFile ./functions/mkc.fish;
       cdr = builtins.readFile ./functions/cdr.fish;
     };
