@@ -6,6 +6,7 @@
       "fontconfig"
     ];
     casks = [
+      "obsidian"
       "hammerspoon"
       "firefox"
       "alfred"
@@ -17,7 +18,6 @@
       "league-of-legends"
       "claude"
       "ghostty"
-      # "rstudio"
     ];
     masApps = {
       "KakaoTalk" = 869223134;

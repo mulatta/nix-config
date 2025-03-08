@@ -12,7 +12,6 @@
       "/System/Applications/System Settings.app"
       "/Applications/Firefox.app"
       # "${pkgs.vscode}/Applications/Visual Studio Code.app"
-      "${pkgs.obsidian}/Applications/Obsidian.app"
       "${pkgs.slack}/Applications/Slack.app"
       "${pkgs.wezterm}/Applications/WezTerm.app"
       "/Applications/KakaoTalk.app"
@@ -28,9 +27,5 @@
   security.pam.services.sudo_local = {
     touchIdAuth = true;
     watchIdAuth = true;
-  };
-
-  services = {
-    tailscale.enable = true;
   };
 }

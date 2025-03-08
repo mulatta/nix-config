@@ -1,11 +1,17 @@
 { pkgs, config, ... }:
 {
+  imports = [
+    ./tailscale.nix
+    ./system-pkgs.nix
+    ./security.nix
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.blacklistedKernelModules = [
-    "psmouse"
-  ];
+
+  # Enable networking
+  networking.networkmanager.enable = true;
 
   ### ===== LOCALES =====
   # Set your time zone.
@@ -26,6 +32,21 @@
     LC_TIME = "ko_KR.UTF-8";
   };
 
+  ### ===== USER ACCOUNT =====
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.seungwon = {
+    isNormalUser = true;
+    description = "Seungwon Lee";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+    ];
+    # packages = with pkgs; [ ];
+  };
+
   ### ===== SERVICES =====
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -43,22 +64,19 @@
     };
   };
 
-  services.tailscale = {
-    enable = true;
-  };
 
   nix = {
     package = pkgs.nix;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
     };
-
-    optimise.automatic = true;
-
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 30d";
+      options = "--delete-older-than 14d";
     };
   };
 }
