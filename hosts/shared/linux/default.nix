@@ -41,7 +41,7 @@
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
     ];
     # packages = with pkgs; [ ];

@@ -83,6 +83,7 @@
                 imports = [
                   ./modules/common
                   ./modules/home.nix
+                  ./modules/darwin
                   inputs.nix-index-database.hmModules.nix-index
                 ];
 

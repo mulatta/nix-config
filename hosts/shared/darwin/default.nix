@@ -11,7 +11,7 @@
   users.users.seungwon = {
     name = "seungwon";
     home = "/Users/seungwon";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
   nix = {
     package = pkgs.nix;
