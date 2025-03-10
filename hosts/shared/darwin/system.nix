@@ -76,21 +76,21 @@
         "com.apple.ImageCapture" = {
           "disableHotPlug" = true;
         };
-        "com.apple.mail" = {
-          DisableReplyAnimations = true;
-          DisableSendAnimations = true;
-          DisableInlineAttachmentViewing = true;
-          AddressesIncludeNameOnPasteboard = true;
-          InboxViewerAttributes = {
-            DisplayInThreadedMode = "yes";
-            SortedDescending = "yes";
-            SortOrder = "received-date";
-          };
-          NSUserKeyEquivalents = {
-            Send = "@\U21a9";
-            Archive = "@$e";
-          };
-        };
+        # "com.apple.mail" = {
+        #   DisableReplyAnimations = true;
+        #   DisableSendAnimations = true;
+        #   DisableInlineAttachmentViewing = true;
+        #   AddressesIncludeNameOnPasteboard = true;
+        #   InboxViewerAttributes = {
+        #     DisplayInThreadedMode = "yes";
+        #     SortedDescending = "yes";
+        #     SortOrder = "received-date";
+        #   };
+        #   NSUserKeyEquivalents = {
+        #     Send = "@\U21a9";
+        #     Archive = "@$e";
+        #   };
+        # };
         "com.apple.dock" = {
           size-immutable = true;
         };

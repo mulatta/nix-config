@@ -14,11 +14,11 @@ window-width = 9999
 confirm-close-surface = true
 macos-option-as-alt = true
 macos-titlebar-style = "tabs"
-shell-integration = none
+shell-integration = fish
 cursor-style = block
-cursor-style-blink = true
+cursor-style-blink = false
 mouse-hide-while-typing = true
-theme = GruvboxDarkHard
+theme = dark:nightfox,light:dayfox
 clipboard-read = "allow"
 clipboard-paste-protection = false
 

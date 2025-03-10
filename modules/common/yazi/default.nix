@@ -2,8 +2,9 @@
 {
   programs.yazi = {
     enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
+    # enableZshIntegration = true;
+    # enableBashIntegration = true;
+    enableNushellIntegration = true;
     settings = import ./settings.nix;
     # packages = import ./package.nix;
     keymap = import ./keymap.nix;

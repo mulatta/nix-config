@@ -41,7 +41,7 @@
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     openssh.authorizedKeys.keys = [
     ];
     # packages = with pkgs; [ ];

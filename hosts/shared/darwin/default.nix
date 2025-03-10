@@ -11,6 +11,7 @@
   users.users.seungwon = {
     name = "seungwon";
     home = "/Users/seungwon";
+    shell = pkgs.nushell;
   };
   nix = {
     package = pkgs.nix;

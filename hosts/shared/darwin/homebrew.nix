@@ -6,6 +6,7 @@
       "fontconfig"
     ];
     casks = [
+      "akiflow"
       "obsidian"
       "hammerspoon"
       "firefox"

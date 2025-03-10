@@ -2,7 +2,8 @@
 {
   imports = [
     ./helix
-    ./fish
+    # ./fish
+    ./nushell
     ./starship
     ./wezterm
     ./direnv.nix
