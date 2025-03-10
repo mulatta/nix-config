@@ -6,7 +6,6 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     nur.url = "github:nix-community/NUR";
     mulatta-nur.url = "git+ssh://git@github.com/mulatta/NUR.git";
-    goreleaser-nur.url = "github:goreleaser/nur";
 
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -39,7 +38,6 @@
     , nix-index-database
     , nur
     , mulatta-nur
-    , goreleaser-nur
     , ...
     }:
     let
@@ -50,7 +48,6 @@
             pkgs = prev;
             repoOverrides = {
               mulatta = import mulatta-nur { pkgs = prev; };
-              goreleaser = import goreleaser-nur { pkgs = prev; };
             };
           };
         })
@@ -84,6 +81,7 @@
                   ./modules/common
                   ./modules/darwin
                   ./modules/home.nix
+                  ./modules/common/aldente.nix
                   inputs.nix-index-database.hmModules.nix-index
                 ];
 
@@ -92,6 +90,7 @@
           ];
         };
       };
+
       nixosConfigurations = {
         mulatta = nixpkgs.lib.nixosSystem
           {
@@ -129,11 +128,10 @@
               (writeScriptBin "dot-clean" ''
                 nix-collect-garbage -d --delete-older-than 30d
               '')
-              (writeScriptBin "dot-release" ''
+              (writeScriptBin "dot-update" ''
                 tag="$(date +%Y).$(expr $(date +%m) + 0).$(expr $(date +%d) + 0)"
                 git tag -m "$tag" "$tag"
                 git push --tags
-                goreleaser release --clean
               '')
               (writeScriptBin "dot-sync" ''
                 git pull --rebase origin main
