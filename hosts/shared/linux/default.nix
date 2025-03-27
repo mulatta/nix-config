@@ -43,6 +43,7 @@
     ];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnNWzmU3xfT6oTe2MVuXs5iAhGv8w9gjCMMguU4VNX+ eq12git-67085791+mulatta@users.noreply.github.com"
     ];
     # packages = with pkgs; [ ];
   };
@@ -63,7 +64,6 @@
       KbdInteractiveAuthentication = false;
     };
   };
-
 
   nix = {
     package = pkgs.nix;

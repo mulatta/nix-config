@@ -6,6 +6,7 @@
     ./security.nix
     ./services.nix
     ./system.nix
+    ./system-pkgs.nix
   ];
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = 5;
