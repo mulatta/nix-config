@@ -1,5 +1,0 @@
-#!/usr/bin/env fish
-
-tag="$(date +%Y).$(expr $(date +%m) + 0).$(expr $(date +%d) + 0)"
-git tag -m "$tag" "$tag"
-git push --tags

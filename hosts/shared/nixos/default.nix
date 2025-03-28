@@ -47,6 +47,7 @@
     ];
     # packages = with pkgs; [ ];
   };
+  programs.zsh.enable = true;
 
   ### ===== SERVICES =====
   # Configure keymap in X11

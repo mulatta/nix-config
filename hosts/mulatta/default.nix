@@ -1,6 +1,6 @@
 {
   imports = [
-    ../shared/linux
+    ../shared/nixos
     ./hardware.nix
     ./networking.nix
   ];

@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   security.sudo.extraRules = [
     {
@@ -12,9 +17,8 @@
     }
   ];
 
-  sops = {
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-    defaultSopsFile = "/home/mulatta/nix-secrets/sops/hosts/mulatta.yaml";
-
-  };
+  # sops = {
+  #   age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  #   defaultSopsFile = "/home/mulatta/nix-secrets/sops/hosts/mulatta.yaml";
+  # };
 }

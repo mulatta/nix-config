@@ -1,6 +1,0 @@
-#!/usr/bin/env fish
-
-git pull --rebase origin main
-nix flake update
-dot-clean
-dot-apply

@@ -1,119 +1,125 @@
 {
   description = "SWN's darwin system flake";
-
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nur.url = "github:nix-community/NUR";
-    # mulatta-nur.url = "git+ssh://git@github.com/mulatta/NUR.git";
-    # secrets.url = "git+ssh://git@github.com/mulatta/secrets.git";
-    # secrets = {
-    #   url = "path:/Users/seungwon/nix-secrets";
-    #   flake = false;
-    # };
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-index-database = {
-      url = "github:Mic92/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
   outputs =
     inputs@{
       self,
       nixpkgs,
       home-manager,
       sops-nix,
-      # , secrets
       darwin,
       nix-homebrew,
       nix-index-database,
-      nur,
-      # , mulatta-nur
       ...
     }:
     let
-      overlays = [
-        (_final: prev: {
-          nur = import nur {
-            nurpkgs = prev;
-            pkgs = prev;
-            repoOverrides = {
-              # mulatta = import mulatta-nur { pkgs = prev; };
-            };
-          };
-        })
-        (import ./overlay)
+      # ======== Architecture ========
+      darwinSystems = [
+        "aarch64-darwin"
+        "x86_64-darwin"
       ];
+      linuxSystems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+      supportedSystems = linuxSystems ++ darwinSystems;
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+
+      # ======== Overlays ========
+      overlays = import ./overlays { inherit inputs; };
+
+      # ======== Package Sets ========
+      pkgs = forAllSystems (
+        system:
+        import nixpkgs {
+          inherit system;
+          overlays = [ overlays ];
+          config = {
+            allowUnfree = true;
+          };
+        }
+      );
+
+      # ======== Helper Functions ========
+      mkSystem = import ./libs/mksystem.nix {
+        inherit overlays nixpkgs inputs;
+      };
+      mkVmSystem = import ./libs/mkVm.nix {
+        inherit overlays nixpkgs inputs;
+      };
+      mkApp = import ./libs/mkApp.nix {
+        inherit nixpkgs inputs overlays;
+      };
     in
     {
-      darwinConfigurations = {
-        rhesus = darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          specialArgs = { inherit inputs; };
-          modules = [
-            { nixpkgs.overlays = overlays; }
-            ./hosts/rhesus
-            nix-homebrew.darwinModules.nix-homebrew
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "hm";
-              home-manager.users.seungwon = {
-                imports = [
-                  ./modules/common
-                  ./modules/darwin
-                  ./modules/home.nix
-                  nix-index-database.hmModules.nix-index
-                  sops-nix.homeManagerModules.sops
-                ];
+      # ======== Formatter ========
+      formatter = forAllSystems (system: pkgs.${system}.nixfmt-rfc-style);
 
-              };
-            }
-          ];
+      # ======== Checks ========
+      checks = forAllSystems (
+        system:
+        import ./checks.nix {
+          inherit inputs system;
+          pkgs = pkgs.${system};
+        }
+      );
+
+      # ======== DevShell ========
+      devShells = forAllSystems (
+        system:
+        import ./shell.nix {
+          pkgs = pkgs.${system};
+          checks = self.checks.${system};
+        }
+      );
+
+      # ======== Darwin Configurations ========
+      darwinConfigurations = {
+        rhesus = mkSystem {
+          system = "aarch64-darwin";
+          hostname = "rhesus";
+          isDarwin = true;
         };
       };
 
+      # ======== NixOS Configurations ========
       nixosConfigurations = {
-        mulatta = nixpkgs.lib.nixosSystem {
+        mulatta = mkSystem {
           system = "x86_64-linux";
-          modules = [
-            { nixpkgs.overlays = overlays; }
-            ./hosts/mulatta
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "hm";
-              home-manager.users.seungwon = {
-                imports = [
-                  ./modules/common
-                  ./modules/nixos
-                  ./modules/home.nix
-                  nix-index-database.hmModules.nix-index
-                  sops-nix.homeManagerModules.sops
-                ];
-
-              };
-            }
-          ];
+          hostname = "mulatta";
         };
       };
     };
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR";
+    };
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    # secrets.url = "git+ssh://git@github.com/mulatta/secrets.git";
+    # secrets = {
+    #   url = "path:/Users/seungwon/nix-secrets";
+    #   flake = false;
+    # };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-index-database = {
+      url = "github:Mic92/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 }
