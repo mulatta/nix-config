@@ -11,6 +11,7 @@
     ./fd.nix
     ./fonts.nix
     ./fzf.nix
+    ./mdbook.nix
     ./gh
     # ./ghostty
     ./git
