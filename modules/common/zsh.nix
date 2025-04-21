@@ -66,8 +66,9 @@ in
       clamOn = "sudo pmset -b disablesleep 1";
       clamOff = "sudo pmset -b disablesleep 0";
       tt = "taskwarrior-tui";
+
+      # git alias
       gs = "git status";
-      gc = "git commit";
     };
 
     sessionVariables = {

@@ -5,26 +5,32 @@
     ./bat.nix
     ./charm.nix
     ./claude-code.nix
+    ./cursor.nix
     ./direnv.nix
+    ./docker.nix
+    ./colima.nix
+    ./drawio.nix
     ./editorconfig.nix
     ./eza.nix
     ./fd.nix
     ./fonts.nix
     ./fzf.nix
-    ./mdbook.nix
     ./gh
-    # ./ghostty
+    ./ghostty
     ./git
     ./glow.nix
-    ./gpg
     ./gnused.nix
+    ./gpg
     ./grep.nix
     ./helix
     ./languages
+    ./mdbook.nix
+    ./nh.nix
     ./nurl.nix
     ./obsidian.nix
+    ./pandoc
+    ./postgre.nix
     ./ripgrep.nix
-    ./sioyek.nix
     ./sops
     ./starship
     ./taskwarrior.nix

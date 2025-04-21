@@ -1,0 +1,107 @@
+theme = "nightfox"
+
+[editor]
+line-number = "relative"
+mouse = false
+bufferline = "multiple"
+cursorline = true
+scroll-lines = 2
+auto-info = true
+indent-heuristic = "hybrid"
+default-line-ending = "lf"
+rulers = [120]
+true-color = true
+end-of-line-diagnostics = "hint"
+popup-border = "all"
+color-modes = true
+text-width = 512
+undercurl = false
+
+[editor.gutters]
+layout = ["diff", "diagnostics", "line-numbers", "spacer"]
+
+[editor.gutters.line-numbers]
+min-width = 3
+
+[editor.smart-tab]
+enable = true
+supresede-menu = true
+
+[editor.lsp]
+auto-signature-help = false
+display-messages = true
+
+[editor.file-picker]
+hidden = false
+max-depth = 5
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+separator = "︙"
+left = ["mode", "spinner", "version-control", "file-base-name"]
+center = ["register"]
+right = ["diagnostics", "selections", "position", "file-encoding"]
+mode.normal = "\uF120"
+mode.insert = "[+]"
+mode.select = "[^]"
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "all"
+nnbsp = "all"
+newline = "all"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "-"
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "disable"
+
+[keys.normal.space]
+space = "file_picker"
+w = ":w"
+q = ":q"
+Q = ":q!"
+n = ":n"
+
+[keys.normal]
+i = "@:toggle inline-diagnostics.cursor-line warning disable <ret><A-i>"
+A-i = "insert_mode"
+A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+A-k = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+]
+
+esc = ["collapse_selection", "keep_primary_selection"]
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"
+
+[keys.insert]
+esc = "@<A-esc>:toggle inline-diagnostics.cursor-line warning hint <ret>"
+A-esc = "normal_mode"
+S-tab = "move_parent_node_start"

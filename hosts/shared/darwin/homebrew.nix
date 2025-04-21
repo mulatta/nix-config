@@ -18,6 +18,7 @@
       "hazel"
       "homerow"
       "hookmark"
+      "imagej"
       "karabiner-elements"
       "keycastr"
       "league-of-legends"
@@ -26,6 +27,8 @@
       "raycast"
       "slack"
       "zen-browser"
+      "zoom"
+      "zotero"
     ];
     masApps = {
       "KakaoTalk" = 869223134;

@@ -1,46 +1,80 @@
-# vi:ft=conf
-#
-# https://ghostty.org/docs/config/reference
-#
-
+alpha-blending = linear
 auto-update-channel = tip
-window-decoration = true
-window-theme = "dark"
-window-save-state = always
-window-padding-balance = true
-# makes it maximizes the window
-window-height = 9999
-window-width = 9999
-confirm-close-surface = true
-macos-option-as-alt = true
-macos-titlebar-style = "tabs"
-shell-integration = zsh
-cursor-style = block
-cursor-style-blink = false
-mouse-hide-while-typing = true
-theme = dark:nightfox,light:dayfox
-clipboard-read = "allow"
+
+background-blur = true
+background-opacity = 0.9
+theme = nightfox
+
 clipboard-paste-protection = false
+clipboard-read = "allow"
+confirm-close-surface = true
 
-# makes it darker like it was before https://github.com/mbadolato/iTerm2-Color-Schemes/commit/506ab2b98b6546d1dc46327dfa1e1e3f8363fbc0
-palette = "0=#1b1b1b"
-background = "#1b1b1b"
+# cursor
+cursor-style = block_hollow
+cursor-style-blink = false
+cursor-color = "#C4A7E7"
 
-font-family = "TX-02"
-font-size = 14
-font-feature = zero
+font-codepoint-map = U+e0b0-U+e0b3,U+e0b4-U+e0c8,U+e0cc-U+e0d4,U+e0ca=JetBrainsMono Nerd Font Mono
+font-codepoint-map = U+e5fa-U+e6b1=JetBrainsMono Nerd Font Mono
+font-codepoint-map = U+ea60-U+ebeb=JetBrainsMono Nerd Font Mono
+font-codepoint-map = U+f000-U+f2e0,U+e200-U+e2a9=JetBrainsMono Nerd Font Mono
+font-family = BerkeleyMono Nerd Font
 font-feature = calt
 font-feature = liga
+font-feature = zero
+font-size = 15
 
-# https://github.com/ryanoasis/nerd-fonts/wiki/Glyph-Sets-and-Code-Points
-# powerline & powerline-extras
-font-codepoint-map = U+e0b0-U+e0b3,U+e0b4-U+e0c8,U+e0cc-U+e0d4,U+e0ca=JetBrainsMono Nerd Font Mono
+mouse-hide-while-typing = true
 
-# font-awesome
-font-codepoint-map = U+f000-U+f2e0,U+e200-U+e2a9=JetBrainsMono Nerd Font Mono
+palette = "0=#1b1b1b"
 
-# seti-ui
-font-codepoint-map = U+e5fa-U+e6b1=JetBrainsMono Nerd Font Mono
+shell-integration = zsh
+shell-integration-features = no-cursor,sudo,no-title
 
-# codicons
-font-codepoint-map = U+ea60-U+ebeb=JetBrainsMono Nerd Font Mono
+window-decoration = auto
+window-height = 9999
+window-padding-balance = true
+window-save-state = always
+window-theme = "dark"
+window-width = 9999
+window-colorspace = display-p3
+
+copy-on-select = clipboard
+
+# ===== Keybindings =====
+## basic keybindings
+keybind = clear
+keybind = cmd+g>r=reload_config
+keybind = ctrl+b>x=close_surface
+keybind = cmd+q=quit
+keybind = cmd+n=new_window
+keybind = cmd+w=close_window
+keybind = cmd+v=paste_from_clipboard
+keybind = cmd+c=copy_to_clipboard
+keybind = ctrl+d=scroll_to_bottom
+keybind = ctrl+u=scroll_to_top
+
+
+# tabs
+keybind = ctrl+t>n=new_tab
+keybind = ctrl+t>l=next_tab
+keybind = ctrl+t>h=previous_tab
+keybind = ctrl+t>comma=move_tab:-1
+keybind = ctrl+t>period=move_tab:1
+
+# split
+keybind = ctrl+b>;=new_split:right
+keybind = ctrl+b>'=new_split:down
+keybind = ctrl+b>j=goto_split:bottom
+keybind = ctrl+b>k=goto_split:top
+keybind = ctrl+b>h=goto_split:left
+keybind = ctrl+b>l=goto_split:right
+keybind = ctrl+b>z=toggle_split_zoom
+keybind = ctrl+b>e=equalize_splits
+
+# macos
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+macos-non-native-fullscreen = "visible-menu"
+macos-auto-secure-input = true
+macos-secure-input-indication = true

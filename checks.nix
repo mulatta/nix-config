@@ -5,7 +5,6 @@
 }:
 
 let
-  # pre-commit-hooks 설정
   pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
     src = ./.;
     hooks = {
@@ -54,7 +53,7 @@ let
   # 시스템 구성 유효성 검사 (NixOS 구성에만 해당)
   system-check = pkgs.runCommand "system-check" { } ''
     echo "Checking system configurations..."
-    
+
     # 각 호스트 구성에 대한 기본 유효성 검사
     # 각 호스트가 형식적으로 유효한지 검사
 
@@ -67,7 +66,7 @@ let
   packages-check = pkgs.runCommand "packages-check" { } ''
     # 구성에 패키지 디렉토리가 없을 수 있으므로 builtins.pathExists를 사용하여 안전하게 검사
     echo "Checking for custom packages directory..."
-    
+
     # 패키지 디렉토리가 있는 경우에만 패키지 검사 실행
     mkdir -p $out
     touch $out/checked

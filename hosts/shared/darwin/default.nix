@@ -15,6 +15,7 @@
     home = "/Users/seungwon";
     shell = pkgs.zsh;
   };
+
   nix = {
     package = pkgs.nix;
     extraOptions = ''
@@ -32,14 +33,6 @@
         Weekday = 1;
         Hour = 13;
       };
-    };
-    gc = {
-      automatic = true;
-      interval = {
-        Weekday = 1;
-        Hour = 13;
-      };
-      options = "--delete-older-than 14d";
     };
   };
 }

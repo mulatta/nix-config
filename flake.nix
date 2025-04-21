@@ -9,10 +9,12 @@
       darwin,
       nix-homebrew,
       nix-index-database,
+      disko,
+      nixos-anywhere,
       ...
     }:
     let
-      # ======== Architecture ========
+      # ======== Architectures ========
       darwinSystems = [
         "aarch64-darwin"
         "x86_64-darwin"
@@ -43,12 +45,9 @@
       mkSystem = import ./libs/mksystem.nix {
         inherit overlays nixpkgs inputs;
       };
-      mkVmSystem = import ./libs/mkVm.nix {
-        inherit overlays nixpkgs inputs;
-      };
-      mkApp = import ./libs/mkApp.nix {
-        inherit nixpkgs inputs overlays;
-      };
+      # mkApp = import ./libs/mkApp.nix {
+      #   inherit nixpkgs inputs overlays;
+      # };
     in
     {
       # ======== Formatter ========
@@ -101,7 +100,7 @@
     };
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     # secrets.url = "git+ssh://git@github.com/mulatta/secrets.git";
-    # secrets = {
+    # nix-secrets = {
     #   url = "path:/Users/seungwon/nix-secrets";
     #   flake = false;
     # };
@@ -119,6 +118,14 @@
     };
     darwin = {
       url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-anywhere = {
+      url = "github:nix-community/nixos-anywhere";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

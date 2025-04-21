@@ -23,6 +23,7 @@ let
       [
         inputs.home-manager.nixosModules.home-manager
         ../modules/home-manager/nixos.nix
+        inputs.disko.nixosModules.disko
       ];
 
   hostModule = ../hosts/${hostname};

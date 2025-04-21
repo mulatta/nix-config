@@ -16,6 +16,10 @@
       black
       mypy
       pylint
+
+      # Apple SDK
+      darwin.apple_sdk.frameworks.OpenGL
+      darwin.apple_sdk.frameworks.Cocoa
     ];
 
     shells = with pkgs; [

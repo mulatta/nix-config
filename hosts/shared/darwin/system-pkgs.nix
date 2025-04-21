@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+    custom-scripts
     nodejs_23
-    commit
+    python312Full
     yubikey-manager
     pam_u2f
   ];

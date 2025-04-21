@@ -1,9 +1,10 @@
-{ config, pkgs, lib, ... }:
 {
-  home.packages = [
-    pkgs.ghostty
-  ];
-  xdg.configFile."ghostty/config" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/ghostty/config";
-  };
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  # Use xdg.configFile instead of home.file for better semantics
+  xdg.configFile."ghostty/config".source = ./config;
 }
