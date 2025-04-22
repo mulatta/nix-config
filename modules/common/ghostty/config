@@ -1,3 +1,10 @@
+# ===== macos =====
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+macos-non-native-fullscreen = "visible-menu"
+macos-auto-secure-input = true
+macos-secure-input-indication = true
+
 alpha-blending = linear
 auto-update-channel = tip
 
@@ -51,8 +58,6 @@ keybind = cmd+n=new_window
 keybind = cmd+w=close_window
 keybind = cmd+v=paste_from_clipboard
 keybind = cmd+c=copy_to_clipboard
-keybind = ctrl+d=scroll_to_bottom
-keybind = ctrl+u=scroll_to_top
 
 
 # tabs
@@ -72,9 +77,10 @@ keybind = ctrl+b>l=goto_split:right
 keybind = ctrl+b>z=toggle_split_zoom
 keybind = ctrl+b>e=equalize_splits
 
-# macos
-macos-option-as-alt = true
-macos-titlebar-style = hidden
-macos-non-native-fullscreen = "visible-menu"
-macos-auto-secure-input = true
-macos-secure-input-indication = true
+# quick terminal
+keybind = global:ctrl+;=toggle_quick_terminal
+quick-terminal-position=bottom
+quick-terminal-screen=mouse
+quick-terminal-animation-duration=0.2
+quick-terminal-autohide=true
+quick-terminal-space-behavior=move
