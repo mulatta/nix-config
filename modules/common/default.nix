@@ -5,10 +5,10 @@
     ./bat.nix
     ./charm.nix
     ./claude-code.nix
+    ./colima.nix
     ./cursor.nix
     ./direnv.nix
     ./docker.nix
-    ./colima.nix
     ./drawio.nix
     ./editorconfig.nix
     ./eza.nix
@@ -25,6 +25,7 @@
     ./helix
     ./languages
     ./mdbook.nix
+    ./n8n.nix
     ./nh.nix
     ./nurl.nix
     ./obsidian.nix
