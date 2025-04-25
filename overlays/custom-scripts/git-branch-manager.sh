@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/run/current-system/sw/bin/bash
 
 # This script is used to manage git branches such as delete, update, and rebase
 # them. It prompts the user to choose the branches and the action they want to

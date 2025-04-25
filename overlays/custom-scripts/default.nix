@@ -9,6 +9,7 @@ final: prev: {
       export PATH="${prev.htmlq}/bin:$PATH"
       ${builtins.readFile ./meal.sh}
     '';
+    project-list = prev.writeShellScriptBin "proj" (builtins.readFile ./project.sh);
   };
 
   custom-scripts = prev.symlinkJoin {
@@ -20,6 +21,7 @@ final: prev: {
       convert-to-gif
       meal
       dev-template
+      project-list
     ];
   };
 }

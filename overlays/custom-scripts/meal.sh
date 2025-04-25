@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/run/current-system/sw/bin/bash
 
 DAY_OF_WEEK=$(date +%w)
 TODAY=$(( DAY_OF_WEEK == 0 ? 8 : DAY_OF_WEEK + 1 ))

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/run/current-system/sw/bin/bash
 
 # This script is used to write a conventional commit message.
 # It prompts the user to choose the type of commit as specified in the

@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/run/current-system/sw/bin/bash
 ACTION=$1
 TEMPLATE=$2
 TEMPLATE_PATH=$3
