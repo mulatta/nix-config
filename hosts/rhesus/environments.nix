@@ -1,11 +1,41 @@
-{ config, pkgs, ... }:
 {
-  # System profile 
+  config,
+  pkgs,
+  ...
+}: {
   environment = {
+    systemPath = ["/opt/homebrew/bin"];
+    pathsToLink = ["/Applications"];
     systemPackages = with pkgs; [
+      mkalias
+      tree
+
+      # python dev-envs
+      python312Full
+      python312Packages.pyls-isort
+      python312Packages.pylsp-mypy
+      python312Packages.python-lsp-black
+      python312Packages.python-lsp-server
+      pylint
+      uv
+
+      # Apple SDK
+      apple-sdk
+
+      # nodejs
+      nodejs_24
+
+      # securities
+      yubikey-manager
+      pam_u2f
+
+      # Custom User-defined scripts for utility
+      # custom-scripts
     ];
-    variables = {
-      "VAULT" = "$HOME/Research";
-    };
+
+    shells = with pkgs; [
+      bash
+      zsh
+    ];
   };
 }

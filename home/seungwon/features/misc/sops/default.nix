@@ -1,0 +1,5 @@
+{
+  import = [
+    # ./packages.nix
+  ];
+}

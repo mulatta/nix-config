@@ -1,4 +1,1 @@
-{ ... }:
-{
-  home.homeDirectory = "/home/seungwon";
-}
+{}
