@@ -1,8 +1,10 @@
 {pkgs, ...}: {
   imports = [
-    ./colima.nix
-    ./typst.nix
     ./cmatrix.nix
+    ./colima.nix
     ./docker.nix
+    ./mdbook.nix
+    ./ollama.nix
+    ./typst.nix
   ];
 }

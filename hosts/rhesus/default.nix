@@ -6,6 +6,7 @@
   ...
 }: {
   imports = [
+    ../systems/darwin
     ./environments.nix
     ./homebrew.nix
     ./security.nix
@@ -26,17 +27,40 @@
   users.users.seungwon = {
     name = "seungwon";
     home = "/Users/seungwon";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
+
+  # programs.fish = {
+  #   enable = true;
+  #   interactiveShellInit = ''
+  #     set -g original_path $PATH
+  #     function __fix_path_on_initialization --on-variable PATH
+  #       if status --is-login
+  #         set -g PATH $original_path
+  #       end
+  #     end
+  #   '';
+  # };
+
+  system.primaryUser = "seungwon";
 
   # nix configurations
   nix = {
     package = pkgs.nix;
+    distributedBuilds = true;
     settings = {
+      builders-use-substitutes = true;
       trusted-users = [
         "root"
         "seungwon"
       ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "ca-derivations"
+      ];
+      warn-dirty = false;
+      flake-registry = ""; # Disable global flake registry
     };
     optimise = {
       automatic = true;
@@ -45,5 +69,18 @@
         Hour = 13;
       };
     };
+    buildMachines = [
+      {
+        hostName = "nix-builder";
+        sshUser = "seungwon";
+        sshKey = "/Users/seungwon/.colima/_lima/_config/user";
+        systems = ["x86_64-linux"];
+        maxJobs = 4;
+        speedFactor = 1;
+        protocol = "ssh-ng";
+        supportedFeatures = ["nixos-test" "big-parallel" "benchmark"];
+        mandatoryFeatures = [];
+      }
+    ];
   };
 }

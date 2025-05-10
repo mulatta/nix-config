@@ -35,6 +35,10 @@
     marksman = {
       command = "${pkgs.marksman}/bin/marksman";
     };
+    # typst language server
+    tinymist = {
+      command = "${pkgs.tinymist}/bin/tinymist";
+    };
   };
 
   language = [
@@ -113,6 +117,22 @@
         ];
       };
       auto-format = true;
+    }
+    # typst
+    {
+      name = "typst";
+      scope = "source.typ";
+      file-types = [
+        "typ"
+      ];
+      language-servers = ["tinymist"];
+      formatter = {
+        command = "${pkgs.typstyle}/bin/typstyle";
+        args = [
+          "-l 50"
+          "-t 4"
+        ];
+      };
     }
   ];
 

@@ -2,6 +2,10 @@
 # DevEnvs.gitignore
 .direnv
 .jj
+.pyc
+__pycache__/
+.vscode
+.cursor
 
 
 ####

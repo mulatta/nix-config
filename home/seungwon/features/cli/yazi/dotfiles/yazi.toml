@@ -2,7 +2,7 @@
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
-[manager]
+[mgr]
 ratio = [2, 4, 3]
 sort_by = "alphabetical"
 sort_sensitive = false
@@ -35,9 +35,7 @@ edit = [
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },
   { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
-helix = [
-  { run = 'hx "$@"', desc = "Helix", block = true, for = "unix" },
-]
+helix = [{ run = 'hx "$@"', desc = "Helix", block = true, for = "unix" }]
 open = [
   { run = 'xdg-open "$1"', desc = "Open", for = "linux" },
   { run = 'open "$@"', desc = "Open", for = "macos" },

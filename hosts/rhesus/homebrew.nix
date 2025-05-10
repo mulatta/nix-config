@@ -4,6 +4,7 @@
     brews = [
       "mas"
       "fontconfig"
+      "tailscale"
     ];
     casks = [
       "1password"
@@ -13,6 +14,8 @@
       "bookends"
       "claude"
       "cleanshot"
+      "docker"
+      "devonthink"
       "ghostty"
       "hancom-word"
       "hazel"
@@ -27,7 +30,8 @@
       "raindropio"
       "raycast"
       "slack"
-      "zen-browser"
+      "yubico-yubikey-manager"
+      "zen"
       "zoom"
       "zotero"
     ];

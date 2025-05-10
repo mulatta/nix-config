@@ -1,0 +1,10 @@
+@default:
+    just --list
+
+# open jupyter lab
+@lab:
+    jupyter lab --ip=0.0.0.0 --allow-root --port=8888:8888
+
+
+# dev-utils
+

@@ -1,41 +1,56 @@
 add_newline = false
-# A minimal left prompt
 format = """$directory$character"""
-palette = "catppuccin_mocha"
-# move the rest of the prompt to the right
 right_format = """$all"""
 command_timeout = 5000
 
 [character]
-vicmd_symbol = "[N] >>>"
-success_symbol = '[➜](bold green)'
+success_symbol = '[❯](bold green)'
+error_symbol = "[❯](bold red)"
 
-[directory.substitutions]
-'~/tests/starship-custom' = 'work-project'
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
 
 [git_branch]
-format =  '[$symbol$branch(:$remote_branch)]($style)'
+style = "bold purple"
+format = '[$symbol$remote_name]($style) '
+truncation_length = 4
+truncation_symbol = "…"
+ignore_branches = ['master', 'main']
 
-[aws]
-format = '[$symbol(profile: "$profile" )(\(region: $region\) )]($style)'
+[git_commit]
+disabled = true
+
+[nix_shell]
 disabled = false
-style = 'bold blue'
-symbol = " "
+format = "[$symbol( \\($name\\))]($style) "
+symbol = "❄️"
+style = "bold blue"
 
-[golang]
-format = '[ ](bold cyan)'
+[pixi]
+format = "[$symbol($version )(\\($environment\\) )]($style)"
 
-[kubernetes]
-symbol = '☸ '
-disabled = true
-detect_files = ['Dockerfile']
-format = '[$symbol$context( \($namespace\))]($style) '
-contexts = [
-  { context_pattern = "arn:aws:eks:us-west-2:577926974532:cluster/zd-pvc-omer", style = "green", context_alias = "omerxx", symbol = " " },
-]
+[python]
+symbol = "🐍"
+format = "[${symbol}${pyenv_prefix}(${version})]($style) "
 
-[docker_context]
-disabled = true
+[rust]
+format = "[$symbol($version )]($style) "
+symbol = "🦀 "
+
+[typst]
+format = "[$symbol]($style) "
+style = "bold #0093A7"
+
+[package]
+format = '[$symbol$version]($style) '
+
+[cmd_duration]
+min_time = 500
+format = "[$duration]($style) "
+style = "dimmed white"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

@@ -1,60 +1,30 @@
 {
   pkgs,
-  config,
+  inputs,
   ...
 }: {
   imports = [
-    # ./sops.nix
-    ../common/global
-    ./disko.nix
-    ./hardware.nix
+    inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-pc-ssd
+
+    ./hardware-configuration.nix
     ./networking.nix
-    ./security.nix
+
+    ../systems/nixos/global
+    ../systems/nixos/users/seungwon
+
+    # ../systems/nixos/optional/greetd.nix
+    # ../systems/nixos/optional/quietboot.nix
+    # ../systems/nixos/optional/wireless.nix
+    # ../systems/nixos/optional/encrypted-root.nix
+    ../systems/nixos/optional/ephemeral-btrfs.nix
+
     ./services
-    ./tailscale.nix
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  environment.systemPackages = with pkgs; [];
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # ======== Networking ========
 
-  ### ===== USER ACCOUNT =====
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.seungwon = {
-    isNormalUser = true;
-    description = "Seungwon Lee";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    shell = pkgs.zsh;
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICnNWzmU3xfT6oTe2MVuXs5iAhGv8w9gjCMMguU4VNX+ eq12git-67085791+mulatta@users.noreply.github.com"
-    ];
-    # packages = with pkgs; [ ];
-  };
-  programs.zsh.enable = true;
-
-  ### ===== SERVICES =====
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-    };
-  };
-
-  nix = {
-    package = pkgs.nix;
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 14d";
-    };
-  };
+  system.stateVersion = "24.11";
 }

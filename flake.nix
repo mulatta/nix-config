@@ -30,6 +30,7 @@
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
     formatter = forEachSystem (pkgs: pkgs.alejandra);
+    checks = forEachSystem (pkgs: import ./checks.nix {inherit inputs pkgs;});
 
     # ======== Darwin Configurations ========
     darwinConfigurations = {
@@ -73,17 +74,18 @@
   };
 
   nixConfig = {
-    trusted-substituters = [
+    extra-substituters = [
       "https://cachix.cachix.org"
       "https://nixpkgs.cachix.org"
       "https://nix-community.cachix.org"
+      "https://yazi.cachix.org"
     ];
-    trusted-public-keys = [
+    extra-trusted-public-keys = [
       "cachix.cachix.org-1:eWNHQldwUO7G2VkjpnjDbWwy4KQ/HNxht7H4SSoMckM="
       "nixpkgs.cachix.org-1:q91R6hxbwFvDqTSDKwDAV4T5PxqXGxswD8vhONFMeOE="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
-    extra-experimental-features = "nix-command flakes";
   };
 
   inputs = {
@@ -91,17 +93,13 @@
     systems.url = "github:nix-systems/default";
     hardware.url = "github:nixos/nixos-hardware";
     impermanence.url = "github:nix-community/impermanence";
+    sops-nix.url = "github:Mic92/sops-nix";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    yazi.url = "github:sxyazi/yazi";
 
     pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nur = {
-      url = "github:nix-community/NUR";
-    };
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
+      url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {

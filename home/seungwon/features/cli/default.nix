@@ -6,15 +6,18 @@
     ./direnv.nix
     ./eza.nix
     ./fd.nix
-    ./jujutsu.nix
     ./fzf.nix
     ./gh
     ./git
     ./glow.nix
     ./gnused.nix
+    ./ssh
     ./gpg
     ./grep.nix
+    ./jujutsu.nix
+    ./nh.nix
     ./nurl.nix
+    ./nix-init
     ./postgre.nix
     ./starship
     ./yazi
@@ -26,6 +29,8 @@
     ruff
     ripgrep
     marksman
+
+    csvlens
 
     nixd # Nix LSP
     alejandra # Nix formatter

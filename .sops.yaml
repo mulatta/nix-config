@@ -1,23 +1,30 @@
 keys:
-  # System Host Keys
-  - &host_rhesus age:age1e0fkkg5mqfuw2l33jycze2m9qepw6as8ag2n09va47vejmr75pcqk3zcx5 # Replace with your actual age public key
-  - &host_mulatta age:age1e0fkkg5mqfuw2l33jycze2m9qepw6as8ag2n09va47vejmr75pcqk3zcx5 # Replace with your actual age public key
-  # User Keys
-  - &user_seungwon age:age1e0fkkg5mqfuw2l33jycze2m9qepw6as8ag2n09va47vejmr75pcqk3zcx5 # Replace with your actual age public key
+  # User
+  - &users:
+    - &seungwon age1yubikey1qwfc6u8qwt0c4a96uaycy3e4wewgyzvt9ttlapfl88cfa98s4tx0kznpk44
+  # Host
+  - &hosts:
+    - &rhesus age1uwak6mptuthu2rgz9vgkvpv5cuqgqav6e6j00vevx5tsnrsr69zswk4j99
+  #   - &mulatta age1e0fkkg5mqfuw2l33jycze2m9qepw6as8ag2n09va47vejmr75pcqk3zcx5 # Replace with your actual age public key
 
 creation_rules:
-  # Common secrets for all hosts
-  - path_regex: hosts/common/secrets.yaml
+  # ==== Common Secrets ====
+  - path_regex: hosts/systems/nixos/secrets.yaml
     key_groups:
     - age:
-      - *host_rhesus
-      - *host_mulatta
-      - *user_seungwon
+      - *seungwon
       
-  # Host-specific secrets
-  - path_regex: hosts/[^/]+/secrets.yaml
+  # ==== Host-specific Secrets ====
+  - path_regex: hosts/mulatta/secrets.yaml
     key_groups:
     - age:
-      - *host_rhesus
-      - *host_mulatta
-      - *user_seungwon 
+      - *seungwon 
+    # - pgp:
+    #   - *mulatta
+
+  - path_regex: hosts/rhesus/secrets.yaml
+    key_groups:
+    - age:
+      - *seungwon
+    # - pgp:
+    #   - *rhesus

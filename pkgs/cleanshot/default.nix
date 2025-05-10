@@ -2,7 +2,7 @@
   lib,
   fetchurl,
   stdenvNoCC,
-  darwin,
+  apple-sdk,
 }:
 stdenvNoCC.mkDerivation rec {
   pname = "cleanshot";
@@ -14,8 +14,7 @@ stdenvNoCC.mkDerivation rec {
   };
 
   buildInputs = lib.optionals stdenvNoCC.isDarwin [
-    darwin.apple_sdk.frameworks.CoreServices
-    darwin.apple_sdk.frameworks.DiskArbitration
+    apple-sdk
   ];
 
   unpackPhase = ''

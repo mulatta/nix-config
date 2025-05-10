@@ -77,6 +77,7 @@ in {
     sessionVariables = {
       # SSH_AUTH_SOCK = socketPath;
       SSH_AUTH_SOCK = socketPath;
+      SOPS_AGE_KEY_FILE = "${config.xdg.configHome}/sops/age/keys.txt";
     };
   };
 }
