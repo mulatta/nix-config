@@ -17,6 +17,21 @@
         files = "secrets.*\\.ya?ml$";
         pass_filenames = true;
       };
+      trufflehog = {
+        enable = true;
+        name = "Security Detection";
+        entry = "${pkgs.trufflehog}/bin/trufflehog";
+        language = "system";
+        files = "\\.(nix|yaml|yml|env|key|conf|config|json)$";
+        args = [
+          "filesystem"
+          "--results=verified,unknown"
+          "--fail"
+          "--json"
+          "--filter-entropy=3.0"
+          # "--exclude-globs=**/.git/**,**/.direnv/**,**/result*,**/*.age,**/*.gpg"
+        ];
+      };
       alejandra.enable = true;
     };
   };

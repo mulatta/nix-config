@@ -30,7 +30,7 @@ in {
       (builtins.readFile ../../../../home/seungwon/keys/ssh_id_ed25519_sk.pub)
       (builtins.readFile ../../../../home/seungwon/keys/ssh_backup_id_ed25519_sk.pub)
     ];
-    
+
     # Temporary password for initial access - change this after bootstrap
     initialPassword = "nixos-temp-bootstrap";
     packages = [pkgs.home-manager];

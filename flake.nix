@@ -29,7 +29,7 @@
 
     # packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
     devShells = forEachSystem (pkgs: import ./utils/shell.nix {inherit pkgs;});
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
+    formatter = forEachSystem (pkgs: import ./utils/formatter.nix {inherit pkgs;});
     checks = forEachSystem (pkgs: import ./utils/checks.nix {inherit inputs outputs pkgs;});
     deploy = import ./utils/deploy {inherit inputs outputs lib;};
 

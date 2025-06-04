@@ -1,6 +1,5 @@
 # SSH Agent Forwarding configuration for NixOS
 # Add this to your host configuration (e.g., hosts/mulatta/default.nix)
-
 {
   # Enable SSH daemon with agent forwarding
   services.openssh = {
@@ -8,7 +7,7 @@
     settings = {
       # Allow agent forwarding
       AllowAgentForwarding = true;
-      
+
       # Security settings
       PasswordAuthentication = false;
       PermitRootLogin = "prohibit-password";
@@ -20,15 +19,15 @@
   programs.ssh = {
     # Enable SSH client system-wide
     startAgent = true;
-    
+
     # Global SSH client configuration
     extraConfig = ''
       # Enable agent forwarding by default (use with caution)
       ForwardAgent yes
-      
+
       # Prefer YubiKey authentication
       IdentitiesOnly yes
-      
+
       # Add known YubiKey identities
       AddKeysToAgent yes
     '';

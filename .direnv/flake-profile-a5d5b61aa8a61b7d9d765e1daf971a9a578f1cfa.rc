@@ -14,6 +14,8 @@ CONFIG_SHELL='/nix/store/8ivrpmp3arvxbr6imdwm2d28q9cjsqvi-bash-5.2p37/bin/bash'
 export CONFIG_SHELL
 CXX='clang++'
 export CXX
+DETERMINISTIC_BUILD='1'
+export DETERMINISTIC_BUILD
 DEVELOPER_DIR='/nix/store/w41ks2baj649algkjnbh9746cprrnr1k-apple-sdk-11.3'
 export DEVELOPER_DIR
 HOSTTYPE='aarch64'
@@ -43,7 +45,7 @@ NIX_CC='/nix/store/cvhbqa01i5yy7xmmpqp1hbnvq7kpvgsx-clang-wrapper-19.1.7'
 export NIX_CC
 NIX_CC_WRAPPER_TARGET_HOST_arm64_apple_darwin='1'
 export NIX_CC_WRAPPER_TARGET_HOST_arm64_apple_darwin
-NIX_CFLAGS_COMPILE=' -frandom-seed=lkj60l9zl1 -isystem /nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev/include -isystem /nix/store/kjzs6l0g504nqk2rf388vi30hwg28bvz-boehm-gc-8.2.8-dev/include -isystem /nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3/include -isystem /nix/store/ripf5c9x8arnk29p71s0mklqqzav1jgp-libarchive-3.7.8-dev/include -isystem /nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/include -isystem /nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev/include -isystem /nix/store/kbs1gz7p2j7qd1lixqzkladkjdxs8nj7-openssl-3.4.1-dev/include -isystem /nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev/include -isystem /nix/store/rfng4494hxqxjgsamkcd01mzfdp2fwlh-libcxx-19.1.7-dev/include -isystem /nix/store/sqmzi81xlsf4gk287rnjk7rj4624zy84-compiler-rt-libc-19.1.7-dev/include -isystem /nix/store/m3l5s4b1v7l2hs9dm73i76cx6acry77k-libiconv-109-dev/include -isystem /nix/store/l676klylkdmxgx3dff5qx6r6j596lpvx-libresolv-83-dev/include -isystem /nix/store/zn828prnxazgd5xaqhzn9f8dxfvadkgg-libsbuf-14.1.0-dev/include -isystem /nix/store/zgrs0am3a5avl3jmjsjlph8d4r17wq6j-cups-headers-2.4.11/include -isystem /nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev/include -isystem /nix/store/kjzs6l0g504nqk2rf388vi30hwg28bvz-boehm-gc-8.2.8-dev/include -isystem /nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3/include -isystem /nix/store/ripf5c9x8arnk29p71s0mklqqzav1jgp-libarchive-3.7.8-dev/include -isystem /nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/include -isystem /nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev/include -isystem /nix/store/kbs1gz7p2j7qd1lixqzkladkjdxs8nj7-openssl-3.4.1-dev/include -isystem /nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev/include -isystem /nix/store/rfng4494hxqxjgsamkcd01mzfdp2fwlh-libcxx-19.1.7-dev/include -isystem /nix/store/sqmzi81xlsf4gk287rnjk7rj4624zy84-compiler-rt-libc-19.1.7-dev/include -isystem /nix/store/m3l5s4b1v7l2hs9dm73i76cx6acry77k-libiconv-109-dev/include -isystem /nix/store/l676klylkdmxgx3dff5qx6r6j596lpvx-libresolv-83-dev/include -isystem /nix/store/zn828prnxazgd5xaqhzn9f8dxfvadkgg-libsbuf-14.1.0-dev/include -isystem /nix/store/zgrs0am3a5avl3jmjsjlph8d4r17wq6j-cups-headers-2.4.11/include'
+NIX_CFLAGS_COMPILE=' -frandom-seed=6vhs4nniyp -isystem /nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev/include -isystem /nix/store/kjzs6l0g504nqk2rf388vi30hwg28bvz-boehm-gc-8.2.8-dev/include -isystem /nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3/include -isystem /nix/store/ripf5c9x8arnk29p71s0mklqqzav1jgp-libarchive-3.7.8-dev/include -isystem /nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/include -isystem /nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/include -isystem /nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev/include -isystem /nix/store/kbs1gz7p2j7qd1lixqzkladkjdxs8nj7-openssl-3.4.1-dev/include -isystem /nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev/include -isystem /nix/store/rfng4494hxqxjgsamkcd01mzfdp2fwlh-libcxx-19.1.7-dev/include -isystem /nix/store/sqmzi81xlsf4gk287rnjk7rj4624zy84-compiler-rt-libc-19.1.7-dev/include -isystem /nix/store/m3l5s4b1v7l2hs9dm73i76cx6acry77k-libiconv-109-dev/include -isystem /nix/store/l676klylkdmxgx3dff5qx6r6j596lpvx-libresolv-83-dev/include -isystem /nix/store/zn828prnxazgd5xaqhzn9f8dxfvadkgg-libsbuf-14.1.0-dev/include -isystem /nix/store/zgrs0am3a5avl3jmjsjlph8d4r17wq6j-cups-headers-2.4.11/include -isystem /nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev/include -isystem /nix/store/kjzs6l0g504nqk2rf388vi30hwg28bvz-boehm-gc-8.2.8-dev/include -isystem /nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3/include -isystem /nix/store/ripf5c9x8arnk29p71s0mklqqzav1jgp-libarchive-3.7.8-dev/include -isystem /nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/include -isystem /nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/include -isystem /nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev/include -isystem /nix/store/kbs1gz7p2j7qd1lixqzkladkjdxs8nj7-openssl-3.4.1-dev/include -isystem /nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev/include -isystem /nix/store/rfng4494hxqxjgsamkcd01mzfdp2fwlh-libcxx-19.1.7-dev/include -isystem /nix/store/sqmzi81xlsf4gk287rnjk7rj4624zy84-compiler-rt-libc-19.1.7-dev/include -isystem /nix/store/m3l5s4b1v7l2hs9dm73i76cx6acry77k-libiconv-109-dev/include -isystem /nix/store/l676klylkdmxgx3dff5qx6r6j596lpvx-libresolv-83-dev/include -isystem /nix/store/zn828prnxazgd5xaqhzn9f8dxfvadkgg-libsbuf-14.1.0-dev/include -isystem /nix/store/zgrs0am3a5avl3jmjsjlph8d4r17wq6j-cups-headers-2.4.11/include'
 export NIX_CFLAGS_COMPILE
 NIX_CONFIG='extra-experimental-features = nix-command flakes ca-derivations'
 export NIX_CONFIG
@@ -57,7 +59,7 @@ NIX_HARDENING_ENABLE='bindnow format fortify fortify3 pic relro stackclashprotec
 export NIX_HARDENING_ENABLE
 NIX_IGNORE_LD_THROUGH_GCC='1'
 export NIX_IGNORE_LD_THROUGH_GCC
-NIX_LDFLAGS=' -L/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8/lib -L/nix/store/6drfczjy4m7k672adzvzibhhj2z33wq4-libarchive-3.7.8-lib/lib -L/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/lib -L/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/lib -L/nix/store/z2js30ib9b11hhcy1zy6x4nzdg75bpxf-openssl-3.4.1/lib -L/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0/lib -L/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1/lib -L/nix/store/xppzbf3fssn7g35ixgzifkwj54x419n5-libcxx-19.1.7/lib -L/nix/store/zqc178w2vh4lkxmy3znl5s2xl7d401nr-compiler-rt-libc-19.1.7/lib -L/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109/lib -L/nix/store/xdp9yf1r58jzfw1rh68qdhp0d923l07w-libresolv-83/lib -L/nix/store/w2gmrz3ki4lqwb0gw95bjsrwlhknq8ks-libsbuf-14.1.0/lib -L/nix/store/jmq7mr51dql3w8y26kzf4j1s62k6mfww-libutil-72/lib -L/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8/lib -L/nix/store/6drfczjy4m7k672adzvzibhhj2z33wq4-libarchive-3.7.8-lib/lib -L/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/lib -L/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/lib -L/nix/store/z2js30ib9b11hhcy1zy6x4nzdg75bpxf-openssl-3.4.1/lib -L/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0/lib -L/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1/lib -L/nix/store/xppzbf3fssn7g35ixgzifkwj54x419n5-libcxx-19.1.7/lib -L/nix/store/zqc178w2vh4lkxmy3znl5s2xl7d401nr-compiler-rt-libc-19.1.7/lib -L/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109/lib -L/nix/store/xdp9yf1r58jzfw1rh68qdhp0d923l07w-libresolv-83/lib -L/nix/store/w2gmrz3ki4lqwb0gw95bjsrwlhknq8ks-libsbuf-14.1.0/lib -L/nix/store/jmq7mr51dql3w8y26kzf4j1s62k6mfww-libutil-72/lib'
+NIX_LDFLAGS=' -L/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8/lib -L/nix/store/6drfczjy4m7k672adzvzibhhj2z33wq4-libarchive-3.7.8-lib/lib -L/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/lib -L/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/lib -L/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/lib -L/nix/store/z2js30ib9b11hhcy1zy6x4nzdg75bpxf-openssl-3.4.1/lib -L/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0/lib -L/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1/lib -L/nix/store/xppzbf3fssn7g35ixgzifkwj54x419n5-libcxx-19.1.7/lib -L/nix/store/zqc178w2vh4lkxmy3znl5s2xl7d401nr-compiler-rt-libc-19.1.7/lib -L/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109/lib -L/nix/store/xdp9yf1r58jzfw1rh68qdhp0d923l07w-libresolv-83/lib -L/nix/store/w2gmrz3ki4lqwb0gw95bjsrwlhknq8ks-libsbuf-14.1.0/lib -L/nix/store/jmq7mr51dql3w8y26kzf4j1s62k6mfww-libutil-72/lib -L/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8/lib -L/nix/store/6drfczjy4m7k672adzvzibhhj2z33wq4-libarchive-3.7.8-lib/lib -L/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/lib -L/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/lib -L/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/lib -L/nix/store/z2js30ib9b11hhcy1zy6x4nzdg75bpxf-openssl-3.4.1/lib -L/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0/lib -L/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1/lib -L/nix/store/xppzbf3fssn7g35ixgzifkwj54x419n5-libcxx-19.1.7/lib -L/nix/store/zqc178w2vh4lkxmy3znl5s2xl7d401nr-compiler-rt-libc-19.1.7/lib -L/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109/lib -L/nix/store/xdp9yf1r58jzfw1rh68qdhp0d923l07w-libresolv-83/lib -L/nix/store/w2gmrz3ki4lqwb0gw95bjsrwlhknq8ks-libsbuf-14.1.0/lib -L/nix/store/jmq7mr51dql3w8y26kzf4j1s62k6mfww-libutil-72/lib'
 export NIX_LDFLAGS
 NIX_NO_SELF_RPATH='1'
 export NIX_NO_SELF_RPATH
@@ -73,11 +75,17 @@ OLDPWD=''
 export OLDPWD
 OPTERR='1'
 OSTYPE='darwin24.4.0'
-PATH='/nix/store/bcnx80h4bsb3bq91bq8q4k9f18s9kbga-libarchive-3.7.8/bin:/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/bin:/nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23/bin:/nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0/bin:/nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0/bin:/nix/store/vj4qqijxdna0sqb83v6hir34p6ilsdxy-deploy-rs-0-unstable-2024-06-12/bin:/nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2/bin:/nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7/bin:/nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1/bin:/nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2/bin:/nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1/bin:/nix/store/fzc7skijbm8bv5mnh5naz051v9qbz7v0-ssh-to-age-1.1.11/bin:/nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6/bin:/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/bin:/nix/store/chycxkrrywpmn683lmybkbd13c1bnqsp-age-plugin-yubikey-0.5.0-unstable-2024-11-02/bin:/nix/store/bx0b6gvphv01s2px3j1h1ajy036h8bgb-openssl-3.4.1-bin/bin:/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0/bin:/nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0/bin:/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1/bin:/nix/store/cvhbqa01i5yy7xmmpqp1hbnvq7kpvgsx-clang-wrapper-19.1.7/bin:/nix/store/5hgabdyqh22l57cb3qgx10lcc40d5n9p-clang-19.1.7/bin:/nix/store/d72z8b7fvvcin2p84x7h5s0abkggplzc-coreutils-9.7/bin:/nix/store/k8q0n8py04l07glgsfmvqqyqazxf04mb-cctools-binutils-darwin-wrapper-1010.6/bin:/nix/store/idmz24ps83r9mz2hkxdqwv6y4v2v7x28-cctools-binutils-darwin-1010.6/bin:/nix/store/9y6b0s0z24zvc9mh4khzvk2f83n1ywjw-xcbuild-0.1.1-unstable-2019-11-20-xcrun/bin:/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109/bin:/nix/store/d72z8b7fvvcin2p84x7h5s0abkggplzc-coreutils-9.7/bin:/nix/store/9gfvy5dd2kp4xf7m3k5gm79dx1mja2lj-findutils-4.10.0/bin:/nix/store/wkgmvs8kl4a0xkr1a1cs9m3hkn07zh5f-diffutils-3.12/bin:/nix/store/3p81h24g11jfcdd7ifql71lr5mjag102-gnused-4.9/bin:/nix/store/6rdq4hg48bmqy7d8da38niai5ngg1x1s-gnugrep-3.11/bin:/nix/store/ip1m0zq8r95z6wbhk6l0k32anw8h4kc7-gawk-5.3.2/bin:/nix/store/0pfs35y6gzcd3bxiybl7vih5yfyv8bcl-gnutar-1.35/bin:/nix/store/29p1y63i1dxqspyrfima6s5ay6525zlf-gzip-1.14/bin:/nix/store/7dvq6aba13kqkvj7ay850s4q806p33vw-bzip2-1.0.8-bin/bin:/nix/store/wkq7f52a2xq4n24f545wy2fidm4z14f2-gnumake-4.4.1/bin:/nix/store/8ivrpmp3arvxbr6imdwm2d28q9cjsqvi-bash-5.2p37/bin:/nix/store/n1i5qvy1jcblq3s1ilnmc83yqcl0l8vk-patch-2.7.6/bin:/nix/store/rmn4csq2fk0scys2d0v6hgkd3yv5fkxj-xz-5.8.1-bin/bin:/nix/store/bpibjj5f5z5p73afivj0ljzbpdgnjbi0-file-5.46/bin'
+PATH='/nix/store/bcnx80h4bsb3bq91bq8q4k9f18s9kbga-libarchive-3.7.8/bin:/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/bin:/nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23/bin:/nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0/bin:/nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0/bin:/nix/store/drkixdcr3rfizf0addf1wqk8ibdlfpcv-pre-commit-4.0.1/bin:/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/bin:/nix/store/s429ab8rmh2priy5k5p7a76w4sq6w78p-python3.12-identify-2.6.12/bin:/nix/store/93znhry0ccspy50j4wq3jz93f73n2536-python3.12-pytest-8.3.5/bin:/nix/store/izhqr9v66xp7z7w8sbjjy08xnp1qg1q2-python3.12-nodeenv-1.9.1/bin:/nix/store/pdyy71z443i27q3gh4wpr9f7daww3gqr-python3.12-virtualenv-20.30.0/bin:/nix/store/vj4qqijxdna0sqb83v6hir34p6ilsdxy-deploy-rs-0-unstable-2024-06-12/bin:/nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2/bin:/nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7/bin:/nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1/bin:/nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2/bin:/nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1/bin:/nix/store/fzc7skijbm8bv5mnh5naz051v9qbz7v0-ssh-to-age-1.1.11/bin:/nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6/bin:/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/bin:/nix/store/chycxkrrywpmn683lmybkbd13c1bnqsp-age-plugin-yubikey-0.5.0-unstable-2024-11-02/bin:/nix/store/bx0b6gvphv01s2px3j1h1ajy036h8bgb-openssl-3.4.1-bin/bin:/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0/bin:/nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0/bin:/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1/bin:/nix/store/cvhbqa01i5yy7xmmpqp1hbnvq7kpvgsx-clang-wrapper-19.1.7/bin:/nix/store/5hgabdyqh22l57cb3qgx10lcc40d5n9p-clang-19.1.7/bin:/nix/store/d72z8b7fvvcin2p84x7h5s0abkggplzc-coreutils-9.7/bin:/nix/store/k8q0n8py04l07glgsfmvqqyqazxf04mb-cctools-binutils-darwin-wrapper-1010.6/bin:/nix/store/idmz24ps83r9mz2hkxdqwv6y4v2v7x28-cctools-binutils-darwin-1010.6/bin:/nix/store/9y6b0s0z24zvc9mh4khzvk2f83n1ywjw-xcbuild-0.1.1-unstable-2019-11-20-xcrun/bin:/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109/bin:/nix/store/d72z8b7fvvcin2p84x7h5s0abkggplzc-coreutils-9.7/bin:/nix/store/9gfvy5dd2kp4xf7m3k5gm79dx1mja2lj-findutils-4.10.0/bin:/nix/store/wkgmvs8kl4a0xkr1a1cs9m3hkn07zh5f-diffutils-3.12/bin:/nix/store/3p81h24g11jfcdd7ifql71lr5mjag102-gnused-4.9/bin:/nix/store/6rdq4hg48bmqy7d8da38niai5ngg1x1s-gnugrep-3.11/bin:/nix/store/ip1m0zq8r95z6wbhk6l0k32anw8h4kc7-gawk-5.3.2/bin:/nix/store/0pfs35y6gzcd3bxiybl7vih5yfyv8bcl-gnutar-1.35/bin:/nix/store/29p1y63i1dxqspyrfima6s5ay6525zlf-gzip-1.14/bin:/nix/store/7dvq6aba13kqkvj7ay850s4q806p33vw-bzip2-1.0.8-bin/bin:/nix/store/wkq7f52a2xq4n24f545wy2fidm4z14f2-gnumake-4.4.1/bin:/nix/store/8ivrpmp3arvxbr6imdwm2d28q9cjsqvi-bash-5.2p37/bin:/nix/store/n1i5qvy1jcblq3s1ilnmc83yqcl0l8vk-patch-2.7.6/bin:/nix/store/rmn4csq2fk0scys2d0v6hgkd3yv5fkxj-xz-5.8.1-bin/bin:/nix/store/bpibjj5f5z5p73afivj0ljzbpdgnjbi0-file-5.46/bin'
 export PATH
 PATH_LOCALE='/nix/store/0ibdk8b6y5khjmjqd08fv1m1nvj86w59-locale-118/share/locale'
 export PATH_LOCALE
 PS4='+ '
+PYTHONHASHSEED='0'
+export PYTHONHASHSEED
+PYTHONNOUSERSITE='1'
+export PYTHONNOUSERSITE
+PYTHONPATH='/nix/store/drkixdcr3rfizf0addf1wqk8ibdlfpcv-pre-commit-4.0.1/lib/python3.12/site-packages:/nix/store/16nr8q1m1d284s4i74jia0p8f7cv11az-python3.12-cfgv-3.4.0/lib/python3.12/site-packages:/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/lib/python3.12/site-packages:/nix/store/s429ab8rmh2priy5k5p7a76w4sq6w78p-python3.12-identify-2.6.12/lib/python3.12/site-packages:/nix/store/3pk6zm0dsv1j97bf3faxvkfilkzdwans-python3.12-editdistance-s-1.0.0/lib/python3.12/site-packages:/nix/store/pcdpc1z0fkcbi7w80pzk4fdgfl48di2n-python3.12-cffi-1.17.1/lib/python3.12/site-packages:/nix/store/0d75hwg2cw97gkk0ma84gg7c1j141zx6-python3.12-pycparser-2.22/lib/python3.12/site-packages:/nix/store/93znhry0ccspy50j4wq3jz93f73n2536-python3.12-pytest-8.3.5/lib/python3.12/site-packages:/nix/store/k56jjasiflxklnqr6zakf3gm44902kpw-python3.12-iniconfig-2.1.0/lib/python3.12/site-packages:/nix/store/82ic35xih2k9y4bh9dxd9rx7jsv4qi4w-python3.12-packaging-24.2/lib/python3.12/site-packages:/nix/store/vxv0rpgy2d9z50d30zpznrch3ldj2r30-python3.12-pluggy-1.5.0/lib/python3.12/site-packages:/nix/store/z1jqlsbpgvkk5xivhhw0d6sgv3h9gwjd-python3.12-ukkonen-1.0.1/lib/python3.12/site-packages:/nix/store/izhqr9v66xp7z7w8sbjjy08xnp1qg1q2-python3.12-nodeenv-1.9.1/lib/python3.12/site-packages:/nix/store/wpr7cc51q9mcl09dp6ql1rbvr1i1ggly-python3.12-pyyaml-6.0.2/lib/python3.12/site-packages:/nix/store/2l7xqyr1j5slx13lfxi31r70px9w7bmh-python3.12-toml-0.10.2/lib/python3.12/site-packages:/nix/store/pdyy71z443i27q3gh4wpr9f7daww3gqr-python3.12-virtualenv-20.30.0/lib/python3.12/site-packages:/nix/store/8m27smm6wj24gdf55ffrjjpm4f3wxmis-python3.12-distlib-0.3.9/lib/python3.12/site-packages:/nix/store/70wbyz2n8l18y9x5kwihhm4a5bk60wzf-python3.12-filelock-3.18.0/lib/python3.12/site-packages:/nix/store/mjfdipmwh4cda8p6hhp5xr1c2nixsfrl-python3.12-platformdirs-4.3.7/lib/python3.12/site-packages'
+export PYTHONPATH
 RANLIB='ranlib'
 export RANLIB
 SDKROOT='/nix/store/w41ks2baj649algkjnbh9746cprrnr1k-apple-sdk-11.3/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk'
@@ -92,7 +100,7 @@ STRINGS='strings'
 export STRINGS
 STRIP='strip'
 export STRIP
-XDG_DATA_DIRS='/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8/share:/nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3/share:/nix/store/bcnx80h4bsb3bq91bq8q4k9f18s9kbga-libarchive-3.7.8/share:/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/share:/nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23/share:/nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0/share:/nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0/share:/nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2/share:/nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7/share:/nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1/share:/nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2/share:/nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1/share:/nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6/share:/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/share:/nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0/share'
+XDG_DATA_DIRS='/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8/share:/nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3/share:/nix/store/bcnx80h4bsb3bq91bq8q4k9f18s9kbga-libarchive-3.7.8/share:/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3/share:/nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23/share:/nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0/share:/nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0/share:/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/share:/nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2/share:/nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7/share:/nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1/share:/nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2/share:/nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1/share:/nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6/share:/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0/share:/nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0/share'
 export XDG_DATA_DIRS
 ZERO_AR_DATE='1'
 export ZERO_AR_DATE
@@ -152,9 +160,9 @@ doInstallCheck=''
 export doInstallCheck
 dontAddDisableDepTrack='1'
 export dontAddDisableDepTrack
-declare -a envBuildBuildHooks=()
-declare -a envBuildHostHooks=()
-declare -a envBuildTargetHooks=()
+declare -a envBuildBuildHooks=('addPythonPath' )
+declare -a envBuildHostHooks=('addPythonPath' )
+declare -a envBuildTargetHooks=('addPythonPath' )
 declare -a envHostHostHooks=('ccWrapper_addCVars' 'bintoolsWrapper_addLDVars' )
 declare -a envHostTargetHooks=('ccWrapper_addCVars' 'bintoolsWrapper_addLDVars' )
 declare -a envTargetTargetHooks=()
@@ -166,7 +174,7 @@ mesonFlags=''
 export mesonFlags
 name='config-env'
 export name
-nativeBuildInputs='/nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev /nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23 /nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0 /nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0 /nix/store/vj4qqijxdna0sqb83v6hir34p6ilsdxy-deploy-rs-0-unstable-2024-06-12 /nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2 /nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7 /nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1 /nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2 /nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1 /nix/store/fzc7skijbm8bv5mnh5naz051v9qbz7v0-ssh-to-age-1.1.11 /nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6 /nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0 /nix/store/chycxkrrywpmn683lmybkbd13c1bnqsp-age-plugin-yubikey-0.5.0-unstable-2024-11-02 /nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev /nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0 /nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev'
+nativeBuildInputs='/nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev /nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23 /nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0 /nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0 /nix/store/drkixdcr3rfizf0addf1wqk8ibdlfpcv-pre-commit-4.0.1 /nix/store/vj4qqijxdna0sqb83v6hir34p6ilsdxy-deploy-rs-0-unstable-2024-06-12 /nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2 /nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7 /nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1 /nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2 /nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1 /nix/store/fzc7skijbm8bv5mnh5naz051v9qbz7v0-ssh-to-age-1.1.11 /nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6 /nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0 /nix/store/chycxkrrywpmn683lmybkbd13c1bnqsp-age-plugin-yubikey-0.5.0-unstable-2024-11-02 /nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev /nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0 /nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev'
 export nativeBuildInputs
 out='/Users/seungwon/nix-config/outputs/out'
 export out
@@ -187,7 +195,7 @@ phases='buildPhase'
 export phases
 pkg='/nix/store/w41ks2baj649algkjnbh9746cprrnr1k-apple-sdk-11.3'
 declare -a pkgsBuildBuild=()
-declare -a pkgsBuildHost=('/nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev' '/nix/store/kjzs6l0g504nqk2rf388vi30hwg28bvz-boehm-gc-8.2.8-dev' '/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8' '/nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3' '/nix/store/ripf5c9x8arnk29p71s0mklqqzav1jgp-libarchive-3.7.8-dev' '/nix/store/6drfczjy4m7k672adzvzibhhj2z33wq4-libarchive-3.7.8-lib' '/nix/store/bcnx80h4bsb3bq91bq8q4k9f18s9kbga-libarchive-3.7.8' '/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3' '/nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23' '/nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0' '/nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0' '/nix/store/vj4qqijxdna0sqb83v6hir34p6ilsdxy-deploy-rs-0-unstable-2024-06-12' '/nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2' '/nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7' '/nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1' '/nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2' '/nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1' '/nix/store/fzc7skijbm8bv5mnh5naz051v9qbz7v0-ssh-to-age-1.1.11' '/nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6' '/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0' '/nix/store/chycxkrrywpmn683lmybkbd13c1bnqsp-age-plugin-yubikey-0.5.0-unstable-2024-11-02' '/nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev' '/nix/store/kbs1gz7p2j7qd1lixqzkladkjdxs8nj7-openssl-3.4.1-dev' '/nix/store/bx0b6gvphv01s2px3j1h1ajy036h8bgb-openssl-3.4.1-bin' '/nix/store/z2js30ib9b11hhcy1zy6x4nzdg75bpxf-openssl-3.4.1' '/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0' '/nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0' '/nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev' '/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1' '/nix/store/53ixhpv90d047y0cyf416sgsqgyqxm1w-update-autotools-gnu-config-scripts-hook' '/nix/store/jjhw2phnaip4kg0qjas3x3fsaifi8y0w-no-broken-symlinks.sh' '/nix/store/h9lc1dpi14z7is86ffhl3ld569138595-audit-tmpdir.sh' '/nix/store/m54bmrhj6fqz8nds5zcj97w9s9bckc9v-compress-man-pages.sh' '/nix/store/wgrbkkaldkrlrni33ccvm3b6vbxzb656-make-symlinks-relative.sh' '/nix/store/5yzw0vhkyszf2d179m0qfkgxmp5wjjx4-move-docs.sh' '/nix/store/fyaryjvghbkpfnsyw97hb3lyb37s1pd6-move-lib64.sh' '/nix/store/kd4xwxjpjxi71jkm6ka0np72if9rm3y0-move-sbin.sh' '/nix/store/pag6l61paj1dc9sv15l7bm5c17xn5kyk-move-systemd-user-units.sh' '/nix/store/cmzya9irvxzlkh7lfy6i82gbp0saxqj3-multiple-outputs.sh' '/nix/store/hxv896faph0rqxjq2ycxpcrbnngc95sz-patch-shebangs.sh' '/nix/store/cickvswrvann041nqxb0rxilc46svw1n-prune-libtool-files.sh' '/nix/store/xyff06pkhki3qy1ls77w10s0v79c9il0-reproducible-builds.sh' '/nix/store/z7k98578dfzi6l3hsvbivzm7hfqlk0zc-set-source-date-epoch-to-latest.sh' '/nix/store/pilsssjjdxvdphlg2h19p0bfx5q0jzkn-strip.sh' '/nix/store/cvhbqa01i5yy7xmmpqp1hbnvq7kpvgsx-clang-wrapper-19.1.7' '/nix/store/k8q0n8py04l07glgsfmvqqyqazxf04mb-cctools-binutils-darwin-wrapper-1010.6' '/nix/store/9y6b0s0z24zvc9mh4khzvk2f83n1ywjw-xcbuild-0.1.1-unstable-2019-11-20-xcrun' )
+declare -a pkgsBuildHost=('/nix/store/vdpq4nf4v4wzn7kfm4j1a1zfvclh5z3c-nix-2.28.3-dev' '/nix/store/kjzs6l0g504nqk2rf388vi30hwg28bvz-boehm-gc-8.2.8-dev' '/nix/store/lir2dc0xzfbari4c8mpacmbl4gz6skfl-boehm-gc-8.2.8' '/nix/store/aasid2fq7hmf8ml94x16kqiif4ig7xp3-nlohmann_json-3.11.3' '/nix/store/ripf5c9x8arnk29p71s0mklqqzav1jgp-libarchive-3.7.8-dev' '/nix/store/6drfczjy4m7k672adzvzibhhj2z33wq4-libarchive-3.7.8-lib' '/nix/store/bcnx80h4bsb3bq91bq8q4k9f18s9kbga-libarchive-3.7.8' '/nix/store/psiz98b1xids6s9g0jzz5arss8x4jzpa-nix-2.28.3' '/nix/store/yfs02k49b7xkyy6n1mcmph333irzn9iw-home-manager-0-unstable-2025-05-23' '/nix/store/9pa6rygnkrdp03j4ba0w6yb5qid5x3qb-git-2.49.0' '/nix/store/3zr8nrrs7vjpm15bi59wranjyhbdljsh-just-1.40.0' '/nix/store/drkixdcr3rfizf0addf1wqk8ibdlfpcv-pre-commit-4.0.1' '/nix/store/16nr8q1m1d284s4i74jia0p8f7cv11az-python3.12-cfgv-3.4.0' '/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10' '/nix/store/s429ab8rmh2priy5k5p7a76w4sq6w78p-python3.12-identify-2.6.12' '/nix/store/3pk6zm0dsv1j97bf3faxvkfilkzdwans-python3.12-editdistance-s-1.0.0' '/nix/store/pcdpc1z0fkcbi7w80pzk4fdgfl48di2n-python3.12-cffi-1.17.1' '/nix/store/0d75hwg2cw97gkk0ma84gg7c1j141zx6-python3.12-pycparser-2.22' '/nix/store/zp73h3jp7jq1xhkdxdikmlsb17lzbkg8-pytest-check-hook' '/nix/store/93znhry0ccspy50j4wq3jz93f73n2536-python3.12-pytest-8.3.5' '/nix/store/k56jjasiflxklnqr6zakf3gm44902kpw-python3.12-iniconfig-2.1.0' '/nix/store/82ic35xih2k9y4bh9dxd9rx7jsv4qi4w-python3.12-packaging-24.2' '/nix/store/vxv0rpgy2d9z50d30zpznrch3ldj2r30-python3.12-pluggy-1.5.0' '/nix/store/z1jqlsbpgvkk5xivhhw0d6sgv3h9gwjd-python3.12-ukkonen-1.0.1' '/nix/store/izhqr9v66xp7z7w8sbjjy08xnp1qg1q2-python3.12-nodeenv-1.9.1' '/nix/store/wpr7cc51q9mcl09dp6ql1rbvr1i1ggly-python3.12-pyyaml-6.0.2' '/nix/store/2l7xqyr1j5slx13lfxi31r70px9w7bmh-python3.12-toml-0.10.2' '/nix/store/pdyy71z443i27q3gh4wpr9f7daww3gqr-python3.12-virtualenv-20.30.0' '/nix/store/8m27smm6wj24gdf55ffrjjpm4f3wxmis-python3.12-distlib-0.3.9' '/nix/store/70wbyz2n8l18y9x5kwihhm4a5bk60wzf-python3.12-filelock-3.18.0' '/nix/store/mjfdipmwh4cda8p6hhp5xr1c2nixsfrl-python3.12-platformdirs-4.3.7' '/nix/store/vj4qqijxdna0sqb83v6hir34p6ilsdxy-deploy-rs-0-unstable-2024-06-12' '/nix/store/dqn17w0c6c322lq6p9qn9lawxv4kyi6a-openssh-10.0p2' '/nix/store/ixxj0797zh8hylvsjrk6mbsm1pb55y6c-gnupg-2.4.7' '/nix/store/lwrpwi61p28fp7cy8cxh965wfg7j3abk-pinentry-curses-1.3.1' '/nix/store/c11k636phwvd783hs5bw0632yg43cr0d-sops-3.10.2' '/nix/store/a14hawyv7bpd9s99fsb31lwa6fv65qyl-rage-0.11.1' '/nix/store/fzc7skijbm8bv5mnh5naz051v9qbz7v0-ssh-to-age-1.1.11' '/nix/store/h1kibx4zhhkz6v5krci5gbydkqw54a0s-paperkey-1.6' '/nix/store/05x9anpd4fd42fxmjb8jpwakij0h5791-yubikey-personalization-1.20.0' '/nix/store/chycxkrrywpmn683lmybkbd13c1bnqsp-age-plugin-yubikey-0.5.0-unstable-2024-11-02' '/nix/store/gwb5dnakhfciqfhnz36kgm401s32s0c6-libfido2-1.15.0-dev' '/nix/store/kbs1gz7p2j7qd1lixqzkladkjdxs8nj7-openssl-3.4.1-dev' '/nix/store/bx0b6gvphv01s2px3j1h1ajy036h8bgb-openssl-3.4.1-bin' '/nix/store/z2js30ib9b11hhcy1zy6x4nzdg75bpxf-openssl-3.4.1' '/nix/store/plbfsydsq2v97v9gs0p3496dpi2k5wcv-libfido2-1.15.0' '/nix/store/rdsj0m76hzlwdahxpjis2yyhr55gjjd9-pam_u2f-1.4.0' '/nix/store/zyy5lh84hhgpk476ca3y74y0fgv8x89k-yubico-piv-tool-2.7.1-dev' '/nix/store/z0y79pn57f1qb1xpq5izvlpj9qyyqkrw-yubico-piv-tool-2.7.1' '/nix/store/53ixhpv90d047y0cyf416sgsqgyqxm1w-update-autotools-gnu-config-scripts-hook' '/nix/store/jjhw2phnaip4kg0qjas3x3fsaifi8y0w-no-broken-symlinks.sh' '/nix/store/h9lc1dpi14z7is86ffhl3ld569138595-audit-tmpdir.sh' '/nix/store/m54bmrhj6fqz8nds5zcj97w9s9bckc9v-compress-man-pages.sh' '/nix/store/wgrbkkaldkrlrni33ccvm3b6vbxzb656-make-symlinks-relative.sh' '/nix/store/5yzw0vhkyszf2d179m0qfkgxmp5wjjx4-move-docs.sh' '/nix/store/fyaryjvghbkpfnsyw97hb3lyb37s1pd6-move-lib64.sh' '/nix/store/kd4xwxjpjxi71jkm6ka0np72if9rm3y0-move-sbin.sh' '/nix/store/pag6l61paj1dc9sv15l7bm5c17xn5kyk-move-systemd-user-units.sh' '/nix/store/cmzya9irvxzlkh7lfy6i82gbp0saxqj3-multiple-outputs.sh' '/nix/store/hxv896faph0rqxjq2ycxpcrbnngc95sz-patch-shebangs.sh' '/nix/store/cickvswrvann041nqxb0rxilc46svw1n-prune-libtool-files.sh' '/nix/store/xyff06pkhki3qy1ls77w10s0v79c9il0-reproducible-builds.sh' '/nix/store/z7k98578dfzi6l3hsvbivzm7hfqlk0zc-set-source-date-epoch-to-latest.sh' '/nix/store/pilsssjjdxvdphlg2h19p0bfx5q0jzkn-strip.sh' '/nix/store/cvhbqa01i5yy7xmmpqp1hbnvq7kpvgsx-clang-wrapper-19.1.7' '/nix/store/k8q0n8py04l07glgsfmvqqyqazxf04mb-cctools-binutils-darwin-wrapper-1010.6' '/nix/store/9y6b0s0z24zvc9mh4khzvk2f83n1ywjw-xcbuild-0.1.1-unstable-2019-11-20-xcrun' )
 declare -a pkgsBuildTarget=()
 declare -a pkgsHostHost=('/nix/store/rfng4494hxqxjgsamkcd01mzfdp2fwlh-libcxx-19.1.7-dev' '/nix/store/xppzbf3fssn7g35ixgzifkwj54x419n5-libcxx-19.1.7' '/nix/store/sqmzi81xlsf4gk287rnjk7rj4624zy84-compiler-rt-libc-19.1.7-dev' '/nix/store/zqc178w2vh4lkxmy3znl5s2xl7d401nr-compiler-rt-libc-19.1.7' )
 declare -a pkgsHostTarget=('/nix/store/w41ks2baj649algkjnbh9746cprrnr1k-apple-sdk-11.3' '/nix/store/m3l5s4b1v7l2hs9dm73i76cx6acry77k-libiconv-109-dev' '/nix/store/fhza62gkyw0mp1h2zls6pl1832zjjf26-libiconv-109' '/nix/store/l676klylkdmxgx3dff5qx6r6j596lpvx-libresolv-83-dev' '/nix/store/xdp9yf1r58jzfw1rh68qdhp0d923l07w-libresolv-83' '/nix/store/zn828prnxazgd5xaqhzn9f8dxfvadkgg-libsbuf-14.1.0-dev' '/nix/store/w2gmrz3ki4lqwb0gw95bjsrwlhknq8ks-libsbuf-14.1.0' '/nix/store/jmq7mr51dql3w8y26kzf4j1s62k6mfww-libutil-72' '/nix/store/zgrs0am3a5avl3jmjsjlph8d4r17wq6j-cups-headers-2.4.11' )
@@ -196,6 +204,7 @@ declare -a postFixupHooks=('noBrokenSymlinksInAllOutputs' '_makeSymlinksRelative
 declare -a postUnpackHooks=('_updateSourceDateEpochFromSourceRoot' )
 declare -a preConfigureHooks=('_multioutConfig' )
 preConfigurePhases=' updateAutotoolsGnuConfigScriptsPhase'
+preDistPhases=' pytestCheckPhase pytestcachePhase pytestRemoveBytecodePhase'
 declare -a preFixupHooks=('_moveToShare' '_multioutDocs' '_multioutDevs' )
 preferLocalBuild='1'
 export preferLocalBuild
@@ -687,6 +696,22 @@ _pruneLibtoolFiles ()
     fi;
     find "$prefix" -type f -name '*.la' -exec grep -q '^# Generated by .*libtool' {} \; -exec grep -q "^old_library=''" {} \; -exec sed -i {} -e "/^dependency_libs='[^']/ c dependency_libs='' #pruned" \;
 }
+_pytestIncludeExcludeExpr ()
+{
+ 
+    local includeListName="$1";
+    local -n includeListRef="$includeListName";
+    local excludeListName="$2";
+    local -n excludeListRef="$excludeListName";
+    local includeString excludeString;
+    if [[ -n "${includeListRef[*]-}" ]]; then
+        includeString="(($(concatStringsSep ") or (" "$includeListName")))";
+    fi;
+    if [[ -n "${excludeListRef[*]-}" ]]; then
+        excludeString="${includeString:+ and }not ($(concatStringsSep ") and not (" "$excludeListName"))";
+    fi;
+    echo "$includeString$excludeString"
+}
 _updateSourceDateEpochFromSourceRoot ()
 {
  
@@ -730,6 +755,11 @@ addEnvHooks ()
     do
         eval "${pkgHookVar}s"'+=("$@")';
     done
+}
+addPythonPath ()
+{
+ 
+    addToSearchPathWithCustomDelimiter : PYTHONPATH $1/lib/python3.12/site-packages
 }
 addToSearchPath ()
 {
@@ -1745,6 +1775,79 @@ printWords ()
     (( "$#" > 0 )) || return 0;
     printf '%s ' "$@"
 }
+pytestCheckPhase ()
+{
+ 
+    echo "Executing pytestCheckPhase";
+    runHook preCheck;
+    local -a flagsArray=(-m pytest);
+    local -a _pathsArray;
+    local path;
+    _pathsArray=();
+    concatTo _pathsArray enabledTestPaths;
+    for path in "${_pathsArray[@]}";
+    do
+        if [[ "$path" =~ "::" ]]; then
+            flagsArray+=("$path");
+        else
+            readarray -t -O"${#flagsArray[@]}" flagsArray < <(/nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/bin/python3.12 - "$path" <<EOF || 
+import glob
+import sys
+path_glob=sys.argv[1]
+if not len(path_glob):
+    sys.exit('Got an empty enabled tests path glob. Aborting')
+path_expanded = glob.glob(path_glob)
+if not len(path_expanded):
+    sys.exit('Enabled tests path glob "{}" does not match any paths. Aborting'.format(path_glob))
+for path in path_expanded:
+    print(path)
+EOF
+ kill "$$");
+        fi;
+    done;
+    _pathsArray=();
+    concatTo _pathsArray disabledTestPaths;
+    for path in "${_pathsArray[@]}";
+    do
+        if [[ "$path" =~ "::" ]]; then
+            flagsArray+=("--deselect=$path");
+        else
+            /nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/bin/python3.12 - "$path" <<EOF
+import glob
+import sys
+path_glob=sys.argv[1]
+if not len(path_glob):
+    sys.exit('Got an empty disabled tests path glob. Aborting')
+if next(glob.iglob(path_glob), None) is None:
+    sys.exit('Disabled tests path glob "{}" does not match any paths. Aborting'.format(path_glob))
+EOF
+
+            flagsArray+=("--ignore-glob=$path");
+        fi;
+    done
+    if [[ -n "${enabledTests[*]-}" ]] || [[ -n "${disabledTests[*]-}" ]]; then
+        flagsArray+=(-k "$(_pytestIncludeExcludeExpr enabledTests disabledTests)");
+    fi;
+    if [[ -n "${enabledTestMarks[*]-}" ]] || [[ -n "${disabledTestMarks[*]-}" ]]; then
+        flagsArray+=(-m "$(_pytestIncludeExcludeExpr enabledTestMarks disabledTestMarks)");
+    fi;
+    eval "flagsArray+=(${pytestFlagsArray[*]-})";
+    concatTo flagsArray pytestFlags;
+    echoCmd 'pytest flags' "${flagsArray[@]}";
+    /nix/store/v0vy1c59f0vf71h64caw17hzymvg0zms-python3-3.12.10/bin/python3.12 "${flagsArray[@]}";
+    runHook postCheck;
+    echo "Finished executing pytestCheckPhase"
+}
+pytestRemoveBytecodePhase ()
+{
+ 
+    find $out -name "*-pytest-*.py[co]" -delete
+}
+pytestcachePhase ()
+{
+ 
+    find $out -name .pytest_cache -type d -exec rm -rf {} +
+}
 recordPropagatedDependencies ()
 {
  
@@ -2033,6 +2136,18 @@ substituteStream ()
         esac;
     done;
     printf "%s" "${!var}"
+}
+toPythonPath ()
+{
+ 
+    local paths="$1";
+    local result=;
+    for i in $paths;
+    do
+        p="$i/lib/python3.12/site-packages";
+        result="${result}${result:+:}$p";
+    done;
+    echo $result
 }
 unpackFile ()
 {

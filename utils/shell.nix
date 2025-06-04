@@ -8,6 +8,8 @@
       git
       just
 
+      pre-commit
+
       deploy-rs
       # ==== Security modules ====
       openssh
