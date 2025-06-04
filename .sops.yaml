@@ -5,26 +5,13 @@ keys:
   # Host
   - &hosts:
     - &rhesus age1uwak6mptuthu2rgz9vgkvpv5cuqgqav6e6j00vevx5tsnrsr69zswk4j99
-  #   - &mulatta age1e0fkkg5mqfuw2l33jycze2m9qepw6as8ag2n09va47vejmr75pcqk3zcx5 # Replace with your actual age public key
+    - &mulatta age1s87glrf9qv43qsem30gyupcttsjwkta9fuz2y7ygz2u4vxyfhvesjxd5hj
 
 creation_rules:
   # ==== Common Secrets ====
-  - path_regex: hosts/systems/nixos/secrets.yaml
+  - path_regex: hosts/common/secrets.yaml
     key_groups:
     - age:
-      - *seungwon
-      
-  # ==== Host-specific Secrets ====
-  - path_regex: hosts/mulatta/secrets.yaml
-    key_groups:
-    - age:
-      - *seungwon 
-    # - pgp:
-    #   - *mulatta
-
-  - path_regex: hosts/rhesus/secrets.yaml
-    key_groups:
-    - age:
-      - *seungwon
-    # - pgp:
-    #   - *rhesus
+      - *seungwon    
+      - *mulatta
+      - *rhesus

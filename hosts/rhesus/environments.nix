@@ -24,16 +24,8 @@
       # nodejs
       nodejs_24
 
-      # securities
-      rage
-      yubikey-manager
-      pam_u2f
-
       # Custom User-defined scripts for utility
       # custom-scripts
-
-      # Utilities
-      ollama
     ];
 
     shells = with pkgs; [
@@ -41,21 +33,4 @@
       zsh
     ];
   };
-
-  # launchd = {
-  #   user = {
-  #     agents = {
-  #       ollama-serve = {
-  #         serviceConfig = {
-  #           Label = "com.ollama.serve";
-  #           ProgramArguments = ["${pkgs.ollama}/bin/ollama " "serve"];
-  #           KeepAlive = true;
-  #           RunAtLoad = true;
-  #           StandardOutPath = "/tmp/ollama.out.log";
-  #           StandardErrorPath = "/tmp/ollama.err.log";
-  #         };
-  #       };
-  #     };
-  #   };
-  # };
 }

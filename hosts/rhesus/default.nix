@@ -6,11 +6,12 @@
   ...
 }: {
   imports = [
-    ../systems/darwin
     ./environments.nix
     ./homebrew.nix
     ./security.nix
     ./system.nix
+    ./fish.nix
+    ./sops.nix
   ];
 
   nixpkgs = {

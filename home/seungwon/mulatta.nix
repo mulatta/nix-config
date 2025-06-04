@@ -1,6 +1,6 @@
 {lib, ...}: {
   imports = [
-    ./system/nixos.nix
+    ./global
     # ./features/productivity
     # ./features/utils
   ];

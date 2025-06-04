@@ -1,5 +1,6 @@
 {pkgs, ...}: {
-  home.packages = [
-    pkgs.nix-init
-  ];
+  programs.nix-init = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ./config.toml);
+  };
 }

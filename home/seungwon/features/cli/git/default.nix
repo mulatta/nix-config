@@ -11,7 +11,8 @@
     name = "mulatta";
     mail = "67085791+mulatta@users.noreply.github.com";
     keyPath = "${config.home.homeDirectory}/.ssh/github_id_ed25519_sk";
-    pubKey = builtins.readFile ./github_id_ed25519_sk.pub;
+    pubKeyMain = builtins.readFile ../../../keys/github_id_ed25519_sk.pub;
+    pubKeyBackup = builtins.readFile ../../../keys/github_backup_id_ed25519_sk.pub;
   };
 
   # extra-config
@@ -21,7 +22,10 @@ in {
     git-lfs
     gitoxide
   ];
-  home.file.".ssh/allowed_signers".text = "${user.mail} ${user.pubKey}";
+  home.file.".ssh/allowed_signers".text = ''
+    "${user.mail} ${user.pubKeyMain}"
+    "${user.mail} ${user.pubKeyBackup}"
+  '';
 
   programs.git = {
     enable = true;

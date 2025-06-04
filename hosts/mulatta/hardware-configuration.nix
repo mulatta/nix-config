@@ -6,7 +6,7 @@
 }: {
   imports = [
     inputs.disko.nixosModules.disko
-    ../systems/nixos/optional/ephemeral-btrfs.nix
+    ../common/optional/ephemeral-btrfs.nix
   ];
 
   nixpkgs.hostPlatform.system = "x86_64-linux";

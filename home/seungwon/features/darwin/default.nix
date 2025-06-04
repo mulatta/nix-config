@@ -10,5 +10,6 @@
     # ./raycast.nix
     # ./slack.nix
     # ./karabiner-elements.nix
+    ./colima.nix
   ];
 }

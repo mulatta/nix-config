@@ -9,7 +9,7 @@
     ...
   }: let
     inherit (self) outputs;
-    lib = nixpkgs.lib // home-manager.lib;
+    lib = nixpkgs.lib // home-manager.lib // darwin.lib;
 
     # ======== Helper Functions ========
     forEachSystem = f: lib.genAttrs (import systems) (system: f pkgsFor.${system});
@@ -27,14 +27,15 @@
 
     overlays = import ./overlays {inherit inputs outputs;};
 
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
-    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    # packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+    devShells = forEachSystem (pkgs: import ./utils/shell.nix {inherit pkgs;});
     formatter = forEachSystem (pkgs: pkgs.alejandra);
-    checks = forEachSystem (pkgs: import ./checks.nix {inherit inputs pkgs;});
+    checks = forEachSystem (pkgs: import ./utils/checks.nix {inherit inputs outputs pkgs;});
+    deploy = import ./utils/deploy {inherit inputs outputs lib;};
 
     # ======== Darwin Configurations ========
     darwinConfigurations = {
-      rhesus = darwin.lib.darwinSystem {
+      rhesus = lib.darwinSystem {
         modules = [./hosts/rhesus];
         specialArgs = {
           inherit inputs outputs;
@@ -44,7 +45,7 @@
 
     # ======== NixOS Configurations ========
     nixosConfigurations = {
-      mulatta = nixpkgs.lib.nixosSystem {
+      mulatta = lib.nixosSystem {
         modules = [./hosts/mulatta];
         specialArgs = {
           inherit inputs outputs;
@@ -98,6 +99,10 @@
 
     yazi.url = "github:sxyazi/yazi";
 
+    deploy-rs = {
+      url = "github:serokell/deploy-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -6,24 +6,32 @@
 }: {
   programs.ssh = {
     enable = true;
-    # TODO: Use socket(1password) only with github & master
+    # my homelab server
     matchBlocks = {
-      # "*" = {
-      #   identityAgent = socketPath;
-      #   extraOptions = {
-      #     IgnoreUnknown = "UseKeyChain";
-      #     UseKeychain = "yes";
-      #     AddKeysToAgent = "yes";
-      #   };
-      # };
       "mulatta" = {
-        hostname = "100.112.255.102";
+        hostname = "100.70.147.90";
         user = "seungwon";
-        identityFile = [
-          "~/.ssh/id_ed25519_sk"
-        ];
         identitiesOnly = true;
+        identityFile = [
+          "~/.ssh/ssh_id_ed25519_sk"
+          "~/.ssh/ssh_backup_id_ed25519_sk"
+        ];
         forwardAgent = false;
+      };
+
+      # github ssh with yubikey
+      "github.com" = {
+        identitiesOnly = true;
+        identityFile = [
+          "~/.ssh/github_id_ed25519_sk"
+          "~/.ssh/github_backup_id_ed25519_sk"
+        ];
+        forwardAgent = false;
+        extraOptions = {
+          ControlMaster = "auto";
+          ControlPath = "~/.ssh/github.sock";
+          ControlPersist = "5m";
+        };
       };
 
       # vm on mac
@@ -31,6 +39,7 @@
         hostname = "127.0.0.1";
         port = 55801;
         user = "seungwon";
+        identitiesOnly = true;
         identityFile = "/Users/seungwon/.colima/_lima/_config/user";
         extraOptions = {
           StrictHostKeyChecking = "no";
@@ -44,18 +53,6 @@
           ControlMaster = "auto";
           ControlPath = "/Users/seungwon/.colima/_lima/colima-nix-builder/ssh.sock";
           ControlPersist = "yes";
-        };
-      };
-
-      # github ssh with yubikey
-      "github.com" = {
-        identityFile = "~/.ssh/github_id_ed25519_sk";
-        identitiesOnly = true;
-        forwardAgent = false;
-        extraOptions = {
-          ControlMaster = "auto";
-          ControlPath = "~/.ssh/github.sock";
-          ControlPersist = "5m";
         };
       };
     };

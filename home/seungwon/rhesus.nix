@@ -1,9 +1,8 @@
 {lib, ...}: {
   imports = [
-    ./system/darwin.nix
     ./features/desktop
     ./features/productivity
-    ./features/utils
+    ./global/darwin.nix
   ];
   home = {
     username = "seungwon";
